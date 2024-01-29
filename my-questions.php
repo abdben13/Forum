@@ -7,7 +7,8 @@
 <?php include('includes/head.php');?>
 <body>
     <?php include('includes/navbar.php');?>
-
+    <br></br>
+    <div class="container">
     <?php 
 
         while($question = $getAllMyQuestions->fetch()){
@@ -27,5 +28,6 @@
             <?php
         }
     ?>
+    </div>
 </body>
 </html>
