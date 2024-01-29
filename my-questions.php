@@ -7,7 +7,7 @@
 <?php include('includes/head.php');?>
 <body>
     <?php include('includes/navbar.php');?>
-    <br></br>
+    <br><br>
     <div class="container">
     <?php 
 
@@ -21,10 +21,12 @@
                     <p class="card-text">
                         <?= $question['description'] ?>
                     </p>
-                    <a href="#" class="btn btn-primary">Acceder à l'article</a>
-                    <a href="#" class="btn btn-warning">Modifier l'article</a>
+                    <a href="#" class="btn btn-primary">Acceder à la question</a>
+                    <a href="#" class="btn btn-warning">Modifier la question</a>
                 </div>
+                
             </div>
+            <br>
             <?php
         }
     ?>
