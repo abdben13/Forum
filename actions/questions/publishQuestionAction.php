@@ -1,4 +1,5 @@
 <?php
+
 require('actions/database.php');
 
 //Validation du formulaire

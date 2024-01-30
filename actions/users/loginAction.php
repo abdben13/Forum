@@ -6,7 +6,7 @@ require('actions/database.php');
 if(isset($_POST['validate'])){
 
     //On vérifie que tous les champs sont renseignés
-    if(!empty($_POST['pseudo']) AND !empty($_POST['password']));
+    if(!empty($_POST['pseudo']) AND !empty($_POST['password'])){
         
         //Données de l'utilisateur
         $user_pseudo = htmlspecialchars($_POST['pseudo']);
@@ -38,8 +38,8 @@ if(isset($_POST['validate'])){
         }else{
             $errorMsg = "Votre pseudo est incorrect";
         }
-
-}else {
+    }else{
     $errorMsg = "Veuillez compléter tous les champs";
+    }
 }
 ?>

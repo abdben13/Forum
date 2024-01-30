@@ -6,7 +6,7 @@ require('actions/database.php');
 if(isset($_POST['validate'])){
 
     //On vérifie que tous les champs sont renseignés
-    if(!empty($_POST['pseudo'])  AND !empty($_POST['lastname']) AND !empty($_POST['firstname']) AND !empty($_POST['password']));
+    if(!empty($_POST['pseudo'])  && !empty($_POST['lastname']) && !empty($_POST['firstname']) && !empty($_POST['password'])){
         
         //Données de l'utilisateur
         $user_pseudo = htmlspecialchars($_POST['pseudo']);
@@ -40,8 +40,8 @@ if(isset($_POST['validate'])){
         }else{
             $errorMsg = "L'utilisateur existe déjà";
         }
-}else {
+    }else{
     $errorMsg = "Veuillez compléter tous les champs";
+    }
 }
-
 ?>

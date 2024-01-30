@@ -1,6 +1,6 @@
 <?php 
-    session_start();
-    require('actions/users/securityAction.php'); ?>
+    require('actions/users/securityAction.php'); 
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <?php include ("includes/head.php");?>
