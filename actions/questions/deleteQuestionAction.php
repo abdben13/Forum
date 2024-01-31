@@ -1,5 +1,7 @@
 <?php 
     session_start();
+
+    //Verifie si l'utilisateur est authentifié
     if(!isset($_SESSION['auth'])){
         header('Location: ../../login.php');
     }
