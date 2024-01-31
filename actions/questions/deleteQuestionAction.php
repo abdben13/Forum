@@ -20,8 +20,8 @@
         if($checkIfQuestionExists->rowCount() > 0){
 
             //Verification si l'id de la question correspond à l'id de l'utilisateur
-            $usersInfos = $checkIfQuestionExists->fetch();
-            if($usersInfos['id_auteur'] == $_SESSION['id']){
+            $questionsInfos = $checkIfQuestionExists->fetch();
+            if($questionsInfos['id_auteur'] == $_SESSION['id']){
                 
                 //Suppression de la question
                 $deleteThisQuestion = $bdd->prepare('DELETE FROM questions WHERE id =?');

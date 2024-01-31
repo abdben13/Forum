@@ -27,7 +27,9 @@
             ?>
                 <div class="card">
                     <div class="card-header">
+                        <a href="article.php?id=<?= $question['id']; ?>">
                         <?= $question['titre'];?>
+                        </a>
                     </div>
                     <div class="card-body">
                     <?= $question['description'];?>
