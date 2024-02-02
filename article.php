@@ -2,6 +2,7 @@
     session_start();
     require('actions/questions/showArticleContentAction.php');
     require('actions/questions/postAnswerAction.php');
+    require('actions/questions/showAllAnswersOfQuestionAction.php');
     ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -34,6 +35,21 @@
                     </div>
             </form>
 
+                <?php 
+                    while($answer = $getAllAnswersOfThisQuestion->fetch()) {
+                        ?>
+                        <div class="card">
+                            <div class="card-header">
+                                <?= $answer['pseudo_auteur'];?>
+                            </div>
+                            <div class="card-body">
+                                <?= $answer['contenu'];?>
+                            </div>
+                        </div>
+                        <br>
+                        <?php 
+                    }
+                ?>
             </section>
             <?php
             }
