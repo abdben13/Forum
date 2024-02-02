@@ -15,6 +15,9 @@
         <li class="nav-item">
           <a class="nav-link" href="my-questions.php">Mes questions</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="chat.php">Chat</a>
+        </li>
         <?php if(isset($_SESSION['auth'])) {
           ?>
           <li class="nav-item">

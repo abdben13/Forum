@@ -1,0 +1,25 @@
+.img {
+    width: 80px; 
+    height: 80px;
+}
+.title {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.presentation {
+    font-size: 23px;
+    margin-top: 25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: blanchedalmond;
+    border-radius: 6px;
+    opacity: 95% ;
+    width: 50%;
+    margin-left: 25%;
+}
+.icone-ligne {
+    width: 10px; 
+    height: 10px; 
+    margin-right: 5px; 
+}
