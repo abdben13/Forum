@@ -24,6 +24,12 @@
           <a class="nav-link" href="actions/users/logout.php">Déconnexion</a>
         </li>
           <?php 
+        }else{
+          ?>
+          <li class="nav-item">
+          <a class="nav-link" href="login.php">Se connecter</a>
+        </li>
+        <?php
         }
         ?>
         </ul>

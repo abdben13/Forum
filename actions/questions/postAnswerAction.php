@@ -2,6 +2,9 @@
     require('actions/database.php');
 
     if(isset($_POST['validate'])) {
+        if(!isset($_SESSION['auth'])) {
+            header('Location: login.php');
+        }
         if(!empty($_POST['answer'])) {
             $user_answer = nl2br(htmlspecialchars($_POST['answer']));
 
