@@ -29,6 +29,8 @@ if(isset($_POST['validate'])){
                 $_SESSION['firstname'] = $usersInfos['prenom'];
                 $_SESSION['pseudo'] = $usersInfos['pseudo'];
 
+                $req = $bdd->prepare("UPDATE users SET en_ligne = 1 WHERE pseudo = '$user_pseudo'");
+                $req->execute();
                 //Redirection vers la page d'accueil
                 header('Location: index.php');
             }else{

@@ -1,33 +1,29 @@
 <?php 
-    //demarrage de la session
-    session_start();
-    if(!isset($_SESSION['user'])) {
-        //si l'utilisateur n'est pas connecté, redirection vers la page d'acceuil
-        header("Location:loginChat.php");
-    }
-    $user = $_SESSION['user']; //email de l'utilisateur
+   require('actions/users/securityAction.php'); 
+
     $pseudo = $_SESSION['pseudo'];
     include "includes/head.php";
     include "includes/navbar.php";
-    include "connexion_bdd.php";
+    include "actions/database.php";
 ?>
 <br><br>
 <?php
-    $req = mysqli_query($con, "SELECT * FROM utilisateurs");
-    $users = mysqli_fetch_all($req, MYSQLI_ASSOC);
-    mysqli_close($con);
+   $reqUsers = $bdd->prepare("SELECT * FROM users");
+   $reqUsers->execute();
+   $users = $reqUsers->fetchAll();
+   
     if(isset($_POST['send'])) {
         // Récupérons le message 
         $message = $_POST['message'];
-        
-        // Connexion à la base de données
-        include("connexion_bdd.php");
+
+        include "actions/database.php";
         
         // Vérifions si le champ n'est pas vide
         if(isset($message) && $message != "") {
             // Insérer le message dans la base de données
-            $req = mysqli_query($con, "INSERT INTO messages VALUES (NULL,'$user','$message',NOW())");
-            
+            $req = $bdd->prepare("INSERT INTO messages VALUES (NULL,'$pseudo','$message',NOW())");
+            $req->execute();
+    
             // Actualisation de la page 
             header('Location:chat.php');
         } else {
@@ -44,15 +40,15 @@
                     <table class="table table-striped">
                         <caption>Utilisateurs</caption>
                         <tbody>
-                            <?php foreach ($users as $utilisateur): ?>
+                            <?php foreach ($users as $user): ?>
                                 <?php
                                     
-                                    $iconeEnLigne = ($utilisateur['en_ligne'] == 1) ? '<img class="icone-ligne" src="images/pngegg.png" alt="En ligne">' : '';
-                                    $iconeHorsLigne = ($utilisateur['en_ligne'] == 0) ? '<img class="icone-ligne" src="images/pngrouge.png" alt="Hors ligne">' : '';
+                                    $iconeEnLigne = ($user['en_ligne'] == 1) ? '<img class="icone-ligne" src="images/pngegg.png" alt="En ligne">' : '';
+                                    $iconeHorsLigne = ($user['en_ligne'] == 0) ? '<img class="icone-ligne" src="images/pngrouge.png" alt="Hors ligne">' : '';
                                 ?>
                                 <tr>
                                 <td class="icone-ligne">
-                                    <?= ucfirst(strtolower($utilisateur['pseudo'])) ?>
+                                    <?= ucfirst(strtolower($user['pseudo'])) ?>
                                     <?= $iconeEnLigne ?>
                                     <?= $iconeHorsLigne ?>
                                 </td>
