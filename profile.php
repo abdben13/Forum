@@ -19,7 +19,9 @@
                         <div class="card-body">
                             <h4>@<?= $user_pseudo ; ?></h4>
                             <hr>
-                            <p><?= $user_lastname . ' ' .  $user_firstname; ?></p>
+                            <p>Inscrit depuis le : <?= date('d/m/Y', strtotime($user_inscription)); ?></p>
+                            <p><?= $count ?> message(s) dans le chat</p>
+                            <p><?= $countGetHisQuestions?> question(s) publiée(s)</p>
                         </div>
                     </div>
                     <br>

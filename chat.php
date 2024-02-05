@@ -16,7 +16,6 @@
         // Récupérons le message 
         $message = $_POST['message'];
 
-        include "actions/database.php";
         
         // Vérifions si le champ n'est pas vide
         if(isset($message) && $message != "") {
@@ -48,7 +47,9 @@
                                 ?>
                                 <tr>
                                 <td class="icone-ligne">
-                                    <?= ucfirst(strtolower($user['pseudo'])) ?>
+                                <a href="profile.php?id=<?= urlencode($user['id']); ?>">
+                                    <?= ucfirst(strtolower($user['pseudo'])); ?>
+                                </a>
                                     <?= $iconeEnLigne ?>
                                     <?= $iconeHorsLigne ?>
                                 </td>
@@ -64,7 +65,7 @@
                     <div class="pseudo">
                         <span><?= strtoupper($pseudo) ?></span>
                         <a href="actions/users/logout.php" class="btn btn-danger">Déconnexion</a>
-                    </div>
+                    </div><!--pseudo-->
                     
                     <div class="messages_box">Chargement ...</div>
                     
@@ -72,25 +73,28 @@
                         <div class="form-group">
                             <textarea class="form-control" name="message" rows="2" placeholder="Votre message"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" name="send">Envoyer</button>
+                        <button type="submit" class="btn btn-primary send_msg" name="send">Envoyer</button>
                     </form>
                 </div><!--chat-->
             </div><!--col-md-6-->
         </div><!--row-->
     </div><!--container-->
     <script> 
-        //actualisation de la page en utilisant AJAX
-        var message_box = document.querySelector('.messages_box');
-        setInterval(function(){
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function(){
-                if(this.readyState == 4 && this.status == 200){
-                    message_box.innerHTML = this.responseText
-                }
-            };
-            xhttp.open("GET","messages.php", true); //recuperation de la page message
-            xhttp.send()
-        },500) //actualisation du chat toutes les 500 ms
-    </script>
+    //actualisation de la page en utilisant AJAX
+    var message_box = document.querySelector('.messages_box');
+    setInterval(function(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+                message_box.innerHTML = this.responseText;
+
+                // Faire défiler vers le bas
+                message_box.scrollTop = message_box.scrollHeight;
+            }
+        };
+        xhttp.open("GET", "actions/chat/messagesAction.php", true);
+        xhttp.send();
+    }, 500);
+</script>
 </body>
 </html>

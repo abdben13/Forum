@@ -23,17 +23,17 @@
                 <p><?= $question_content; ?></p>
                 <hr>
                 <small><?= '<a href="profile.php?id='.$question_id_author.'">'. $question_pseudo_author. '</a> ' . $question_publication_date ?></small>
-            </section>
+            </section><!--show-content -->
             <br>
             <section class="show-answers">
-            <form class="form-group" method="POST">
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Réponse :</label>
-                        <textarea name="answer" class="form-control"></textarea>
-                        <br>
-                        <button class="btn btn-primary" type="submit" name="validate">Répondre</button>
-                    </div>
-            </form>
+                <form class="form-group" method="POST">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Réponse :</label>
+                            <textarea name="answer" class="form-control"></textarea>
+                            <br>
+                            <button class="btn btn-primary" type="submit" name="validate">Répondre</button>
+                        </div><!--form-group -->
+                </form>
 
                 <?php 
                     while($answer = $getAllAnswersOfThisQuestion->fetch()) {
@@ -51,11 +51,10 @@
                         <?php 
                     }
                 ?>
-            </section>
+            </section><!--show-answers -->
             <?php
             }
-        ?>
-        
-    </div>
+        ?>    
+    </div><!--container -->
 </body>
 </html>

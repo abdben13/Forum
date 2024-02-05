@@ -20,9 +20,13 @@ if(isset($_POST['validate'])){
 
         if($checkIfUserAlreadyExists->rowCount() == 0){
             //Si l'utilisateur n'existe pas, on l'enregistre dans la bdd
-            $insertUserOnWebsite = $bdd->prepare('INSERT INTO users (pseudo, nom, prenom, mdp) VALUES (?,?,?,?)');
+            $insertUserOnWebsite = $bdd->prepare('INSERT INTO users (pseudo, nom, prenom, mdp, inscription) VALUES (?,?,?,?, now())');
             $insertUserOnWebsite->execute(array($user_pseudo, $user_lastname, $user_firstname, $user_password));
-            
+
+            //on passe le champs en_ligne a 1 (en ligne)
+            $req = $bdd->prepare("UPDATE users SET en_ligne = 1 WHERE pseudo = '$user_pseudo'");
+            $req->execute();
+
             //Récupération des données de l'utilisateur
             $getInfosOfThisUserReq = $bdd->prepare('SELECT id, pseudo, nom, prenom FROM users WHERE nom =? AND prenom= ? AND pseudo = ?');
             $getInfosOfThisUserReq->execute(array($user_lastname, $user_firstname, $user_pseudo));

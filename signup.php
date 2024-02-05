@@ -9,7 +9,8 @@
     <br>
     <form class="container" method="POST">
         <?php 
-            if(isset($errorMsg)){ echo '<p>'.$errorMsg.'</p>';} ?>
+            if(isset($errorMsg)){ echo '<p>'.$errorMsg.'</p>';} 
+            if(isset($msgSuccess)){ echo '<p>'.$msgSuccess.'</p>';} ?>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Pseudo</label>
             <input type="text" class="form-control" name="pseudo">

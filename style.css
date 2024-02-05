@@ -48,9 +48,7 @@
     margin-left: auto;
     border-radius: 10px 10px 0 10px;
 }
-.others_message span {
-    color: #333;
-}
+
 .date {
     color: #ccc;
 
@@ -138,4 +136,18 @@ table tr{
     width: 10px; 
     height: 10px; 
     margin-right: 5px; 
+}
+.link  {
+    color: #1877f2;
+    font-size: 14px;
+    text-decoration: 0;
+}
+.link:hover {
+    text-decoration: underline;
+}
+a {
+    text-decoration: 0;
+}
+.send_msg{
+    margin-top: 5px;
 }
