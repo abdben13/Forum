@@ -4,8 +4,6 @@
     require('actions/questions/postAnswerAction.php');
     require('actions/questions/showAllAnswersOfQuestionAction.php');
     ?>
-<!DOCTYPE html>
-<html lang="fr">
     <?php include 'includes/head.php'; ?>
 <body>
     <?php include('includes/navbar.php');?>

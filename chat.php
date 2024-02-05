@@ -79,6 +79,12 @@
             </div><!--col-md-6-->
         </div><!--row-->
     </div><!--container-->
+    <script>
+    function session() {
+        window.location="actions/users/logout.php";
+    }
+    setTimeout(session, 60000); // 300000 millisecondes équivalent à 5 minutes
+</script>
     <script> 
     //actualisation de la page en utilisant AJAX
     var message_box = document.querySelector('.messages_box');
