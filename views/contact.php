@@ -1,7 +1,9 @@
-<?php include('includes/head.php'); ?>
+<?php 
+    session_start();
+    include('../includes/head.php'); ?>
 
 <body>
-<?php include('includes/navbar.php'); ?>
+<?php include('../includes/navbar.php'); ?>
 <br><br>
     
 <form class="container" method="POST">

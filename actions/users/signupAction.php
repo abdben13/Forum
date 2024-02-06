@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require('actions/database.php');
+require('../actions/database.php');
 
 //Validation du formulaire
 if(isset($_POST['validate'])){
@@ -40,7 +40,7 @@ if(isset($_POST['validate'])){
             $_SESSION['pseudo'] = $usersInfos['pseudo'];
 
             //Redirection vers la page d'accueil
-            header('Location: index.php');
+            header('Location: ../index.php');
         }else{
             $errorMsg = "L'utilisateur existe déjà";
         }

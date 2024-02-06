@@ -1,12 +1,12 @@
 <?php 
-    require('actions/users/securityAction.php'); 
-    require('actions/questions/publishQuestionAction.php');
+    require('../actions/users/securityAction.php'); 
+    require('../actions/questions/publishQuestionAction.php');
     
 ?>
 
-<?php include ("includes/head.php"); ?>
+<?php include ("../includes/head.php"); ?>
 <body>
-    <?php include('includes/navbar.php');?>
+    <?php include('../includes/navbar.php');?>
     
     <br>
     <br>

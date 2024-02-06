@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require('actions/database.php');
+require('../actions/database.php');
 
 //Validation du formulaire
 if(isset($_POST['validate'])){
@@ -32,7 +32,7 @@ if(isset($_POST['validate'])){
                 $req = $bdd->prepare("UPDATE users SET en_ligne = 1 WHERE pseudo = '$user_pseudo'");
                 $req->execute();
                 //Redirection vers la page d'accueil
-                header('Location: index.php');
+                header('Location: ../index.php');
             }else{
                 $errorMsg = 'Mot de passe incorrect';
             }

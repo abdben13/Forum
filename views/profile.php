@@ -1,11 +1,11 @@
 <?php 
     session_start();
-    require('actions/users/showOneUsersProfileAction.php');
+    require('../actions/users/showOneUsersProfileAction.php');
 ?>
 
-    <?php include('includes/head.php'); ?>
+    <?php include('../includes/head.php'); ?>
 <body>
-    <?php include('includes/navbar.php'); ?>
+    <?php include('../includes/navbar.php'); ?>
     <br><br>
     <div class="container">
         <?php 
@@ -28,7 +28,9 @@
                             ?>
                                 <div class="card">
                                     <div class="card-header">
+                                    <a href="article.php?id=<?= $question['id']; ?>">
                                         <?= $question['titre'];?>
+                                    </a>
                                     </div>
                                     <div class="card-body">
                                         <?= $question['description'];?>

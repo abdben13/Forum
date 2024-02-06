@@ -1,5 +1,5 @@
 <?php 
-    require('actions/database.php');
+    require('../actions/database.php');
    
     //Validation du formulaire
     if(isset($_POST['validate'])) {
@@ -14,7 +14,7 @@
 
             //Modifier les informations de la question dans la base de données
             $editQuestionOnWebsite = $bdd->prepare('UPDATE questions SET titre =?, description =?, contenu =? WHERE id =?');
-            $editQuestionOnWebsite->execute(array($new_question_title,$new_question_description,$new_question, $idOfQuestion));
+            $editQuestionOnWebsite->execute(array($new_question_title,$new_question_description,$new_question_content, $idOfQuestion));
 
             header('Location: my-questions.php');
         }else{

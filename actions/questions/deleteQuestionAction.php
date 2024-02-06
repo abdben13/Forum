@@ -27,7 +27,7 @@
                 $deleteThisQuestion = $bdd->prepare('DELETE FROM questions WHERE id =?');
                 $deleteThisQuestion->execute(array($idOfTheQuestion));
 
-                header('Location: ../../my-questions.php');
+                header('Location: ../../views/my-questions.php');
             }else{
                 echo "Vous ne pouvez pas supprimer cette question";
             }

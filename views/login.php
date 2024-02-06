@@ -1,8 +1,8 @@
-<?php require('actions/users/loginAction.php'); ?>
+<?php require('../actions/users/loginAction.php'); ?>
 
-<?php include('includes/head.php');?>
+<?php include('../includes/head.php');?>
 <body>
-<?php include('includes/navbar.php');?>
+<?php include('../includes/navbar.php');?>
     <br>
     <br>
     <form class="container" method="POST">

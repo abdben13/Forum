@@ -1,12 +1,12 @@
 <?php 
     session_start();
-    require('actions/questions/showArticleContentAction.php');
-    require('actions/questions/postAnswerAction.php');
-    require('actions/questions/showAllAnswersOfQuestionAction.php');
+    require('../actions/questions/showArticleContentAction.php');
+    require('../actions/questions/postAnswerAction.php');
+    require('../actions/questions/showAllAnswersOfQuestionAction.php');
     ?>
-    <?php include 'includes/head.php'; ?>
+    <?php include '../includes/head.php'; ?>
 <body>
-    <?php include('includes/navbar.php');?>
+    <?php include('../includes/navbar.php');?>
     <br><br>
 
     <div class="container">

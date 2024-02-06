@@ -1,10 +1,10 @@
 <?php 
-   require('actions/users/securityAction.php'); 
+   require('../actions/users/securityAction.php'); 
 
     $pseudo = $_SESSION['pseudo'];
-    include "includes/head.php";
-    include "includes/navbar.php";
-    include "actions/database.php";
+    include "../includes/head.php";
+    include "../includes/navbar.php";
+    include "../actions/database.php";
 ?>
 <br><br>
 <?php
@@ -42,8 +42,8 @@
                             <?php foreach ($users as $user): ?>
                                 <?php
                                     
-                                    $iconeEnLigne = ($user['en_ligne'] == 1) ? '<img class="icone-ligne" src="images/pngegg.png" alt="En ligne">' : '';
-                                    $iconeHorsLigne = ($user['en_ligne'] == 0) ? '<img class="icone-ligne" src="images/pngrouge.png" alt="Hors ligne">' : '';
+                                    $iconeEnLigne = ($user['en_ligne'] == 1) ? '<img class="icone-ligne" src="../images/pngegg.png" alt="En ligne">' : '';
+                                    $iconeHorsLigne = ($user['en_ligne'] == 0) ? '<img class="icone-ligne" src="../images/pngrouge.png" alt="Hors ligne">' : '';
                                 ?>
                                 <tr>
                                 <td class="icone-ligne">
@@ -64,7 +64,7 @@
                 <div class="chat">
                     <div class="pseudo">
                         <span><?= strtoupper($pseudo) ?></span>
-                        <a href="actions/users/logout.php" class="btn btn-danger">Déconnexion</a>
+                        <a href="../actions/users/logout.php" class="btn btn-danger">Déconnexion</a>
                     </div><!--pseudo-->
                     
                     <div class="messages_box">Chargement ...</div>
@@ -81,7 +81,7 @@
     </div><!--container-->
     <script>
     function session() {
-        window.location="actions/users/logout.php";
+        window.location="../actions/users/logout.php";
     }
     setTimeout(session, 60000); // 300000 millisecondes équivalent à 5 minutes
 </script>
@@ -98,7 +98,7 @@
                 message_box.scrollTop = message_box.scrollHeight;
             }
         };
-        xhttp.open("GET", "actions/chat/messagesAction.php", true);
+        xhttp.open("GET", "../actions/chat/messagesAction.php", true);
         xhttp.send();
     }, 500);
 </script>

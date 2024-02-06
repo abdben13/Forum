@@ -1,5 +1,5 @@
 <?php
-require('actions/database.php');
+require('../actions/database.php');
 
 //Verification si l'id est bien passé en parametre dans l url
 if(isset($_GET['id']) AND !empty($_GET['id'])) {

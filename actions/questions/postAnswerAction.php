@@ -1,5 +1,5 @@
 <?php 
-    require('actions/database.php');
+    require('../actions/database.php');
 
     if(isset($_POST['validate'])) {
         if(!isset($_SESSION['auth'])) {

@@ -1,5 +1,5 @@
 <?php 
-    require('actions/database.php');
+    require('../actions/database.php');
 
     //Recuperer l'id de l'utilisateur'
     if(isset($_GET['id']) AND !empty($_GET['id'])){

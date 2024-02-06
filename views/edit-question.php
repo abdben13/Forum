@@ -1,12 +1,12 @@
 <?php 
-    require('actions/users/securityAction.php');
-    require('actions/questions/getInfosOfEditedQuestionAction.php');
-    require('actions/questions/editQuestionAction.php');
+    require('../actions/users/securityAction.php');
+    require('../actions/questions/getInfosOfEditedQuestionAction.php');
+    require('../actions/questions/editQuestionAction.php');
 ?>
 
-<?php include('includes/head.php');?>
+<?php include('../includes/head.php');?>
 <body>
-    <?php include('includes/navbar.php');?>
+    <?php include('../includes/navbar.php');?>
 
     <br><br>
     <div class="container">
