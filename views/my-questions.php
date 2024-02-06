@@ -9,9 +9,8 @@
     <?php include('../includes/navbar.php');?>
     <br><br>
     <div class="container">
-    <?php 
-
-        while($question = $getAllMyQuestions->fetch()){
+        <?php 
+            while($question = $getAllMyQuestions->fetch()){
             ?>
             <div class="card">
                 <h5 class="card-header">
@@ -27,12 +26,14 @@
                     <a href="edit-question.php?id=<?= $question['id'] ?>" class="btn btn-warning">Modifier la question</a>
                     <a href="../actions/questions/deleteQuestionAction.php?id=<?= $question['id'] ?>" class="btn btn-danger">Supprimer la question</a>
                 </div>
-                
-            </div>
+            </div><!--card -->
             <br>
             <?php
-        }
-    ?>
-    </div>
+            }
+        ?>
+    </div><!--container -->
+<footer class="bg-body-tertiary text-center fixed-bottom footer-custom">
+  <p>© By Abdelaziz 2024</p>
+</footer>
 </body>
 </html>

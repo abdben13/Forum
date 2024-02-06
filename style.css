@@ -39,6 +39,7 @@
 .your_message {
     border: 1px solid #1877f2;
     border-radius: 10px 10px 10px 0;
+    max-width: 80%;
 }
 .your_message span {
     color: #1877f2;
@@ -47,6 +48,7 @@
     border: 1px solid #999;
     margin-left: auto;
     border-radius: 10px 10px 0 10px;
+    max-width: 80%;
 }
 
 .date {
@@ -150,7 +152,16 @@ a {
 .send_msg{
     margin-top: 5px;
 }
-.form_contact {
-   color: blue;
-   font-size: 14px;
+.h1{
+    font-size: 30px;
+    text-align: center;
+}
+.footer-custom {
+    color: #fff;
+    background-color: #212529 !important;
+}
+@media (max-width: 768px) {
+    #user-table {
+        display: none;
+    }
 }

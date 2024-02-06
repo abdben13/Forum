@@ -6,22 +6,23 @@ require('../actions/database.php');
 if(isset($_POST['validate'])){
 
     //On vérifie que tous les champs sont renseignés
-    if(!empty($_POST['pseudo'])  && !empty($_POST['lastname']) && !empty($_POST['firstname']) && !empty($_POST['password'])){
+    if(!empty($_POST['pseudo']) && !empty($_POST['email']) && !empty($_POST['lastname']) && !empty($_POST['firstname']) && !empty($_POST['password'])){
         
         //Données de l'utilisateur
+        $user_email = htmlspecialchars($_POST['email']);
         $user_pseudo = htmlspecialchars($_POST['pseudo']);
         $user_lastname = htmlspecialchars($_POST['lastname']);
         $user_firstname = htmlspecialchars($_POST['firstname']);
         $user_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
         //On vérifie si l'utilisateur existe déjà
-        $checkIfUserAlreadyExists = $bdd->prepare('SELECT pseudo FROM users WHERE pseudo = ?');
-        $checkIfUserAlreadyExists->execute(array($user_pseudo));
+        $checkIfUserAlreadyExists = $bdd->prepare('SELECT pseudo FROM users WHERE pseudo = ? OR email =? ');
+        $checkIfUserAlreadyExists->execute(array($user_pseudo, $user_email));
 
         if($checkIfUserAlreadyExists->rowCount() == 0){
             //Si l'utilisateur n'existe pas, on l'enregistre dans la bdd
-            $insertUserOnWebsite = $bdd->prepare('INSERT INTO users (pseudo, nom, prenom, mdp, inscription) VALUES (?,?,?,?, now())');
-            $insertUserOnWebsite->execute(array($user_pseudo, $user_lastname, $user_firstname, $user_password));
+            $insertUserOnWebsite = $bdd->prepare('INSERT INTO users (pseudo, nom, prenom, mdp, inscription, email) VALUES (?,?,?,?, now(), ?)');
+            $insertUserOnWebsite->execute(array($user_pseudo, $user_lastname, $user_firstname, $user_password, $user_email));
 
             //on passe le champs en_ligne a 1 (en ligne)
             $req = $bdd->prepare("UPDATE users SET en_ligne = 1 WHERE pseudo = '$user_pseudo'");
@@ -38,6 +39,7 @@ if(isset($_POST['validate'])){
             $_SESSION['lastname'] = $usersInfos['nom'];
             $_SESSION['firstname'] = $usersInfos['prenom'];
             $_SESSION['pseudo'] = $usersInfos['pseudo'];
+            $_SESSION['email'] = $usersInfos['email'];
 
             //Redirection vers la page d'accueil
             header('Location: ../index.php');

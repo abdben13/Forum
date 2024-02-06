@@ -10,8 +10,8 @@
             <?php 
                 if(isset($errorMsg)){ echo '<p>'.$errorMsg.'</p>';} ?>
             <div class="mb-3">
-                <label class="form-label">Pseudo</label>
-                <input type="text" class="form-control" name="pseudo">
+                <label class="form-label">Pseudo ou email</label>
+                <input type="text" class="form-control" name="pseudo_email">
             </div>
             <div class="mb-3">
                 <label class="form-label">Password</label>
@@ -22,6 +22,8 @@
             <a href="signup.php"><p>Je n'ai pas de compte, je m'inscris</p></a>
         </form>
     </div><!--container-->
-
+<footer class="bg-body-tertiary text-center fixed-bottom footer-custom">
+  <p>© By Abdelaziz 2024</p>
+</footer>
 </body>
 </html>

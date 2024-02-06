@@ -7,11 +7,9 @@
 <?php include('../includes/head.php');?>
 <body>
     <?php include('../includes/navbar.php');?>
-
     <br><br>
     <div class="container">
         <?php if(isset($errorMsg)){ echo '<p>'.$errorMsg.'</p>';} ?>
-
             <?php 
                 if(isset($question_content)) {
                     ?>
@@ -33,9 +31,9 @@
                     <?php
                 }
             ?>
-
-        
-    </div>
-    
+     </div><!--container -->
+<footer class="bg-body-tertiary text-center fixed-bottom footer-custom">
+  <p>© By Abdelaziz 2024</p>
+</footer>
 </body>
 </html>

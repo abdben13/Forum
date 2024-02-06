@@ -36,30 +36,39 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="users">
-                    <table class="table table-striped">
-                        <caption>Utilisateurs</caption>
-                        <tbody>
-                            <?php foreach ($users as $user): ?>
-                                <?php
-                                    
-                                    $iconeEnLigne = ($user['en_ligne'] == 1) ? '<img class="icone-ligne" src="../images/pngegg.png" alt="En ligne">' : '';
-                                    $iconeHorsLigne = ($user['en_ligne'] == 0) ? '<img class="icone-ligne" src="../images/pngrouge.png" alt="Hors ligne">' : '';
-                                ?>
-                                <tr>
-                                <td class="icone-ligne">
-                                <a href="profile.php?id=<?= urlencode($user['id']); ?>">
-                                    <?= ucfirst(strtolower($user['pseudo'])); ?>
-                                </a>
-                                    <?= $iconeEnLigne ?>
-                                    <?= $iconeHorsLigne ?>
-                                </td>
-                                </tr>
-                            <?php endforeach ?>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table id="user-table" class="table table-striped">
+                            <caption>Utilisateurs</caption>
+                            <tbody>
+                                <?php foreach ($users as $user): ?>
+                                    <?php
+                                        
+                                        $iconeEnLigne = ($user['en_ligne'] == 1) ? '<img class="icone-ligne" src="../images/pngegg.png" alt="En ligne">' : '';
+                                        $iconeHorsLigne = ($user['en_ligne'] == 0) ? '<img class="icone-ligne" src="../images/pngrouge.png" alt="Hors ligne">' : '';
+                                    ?>
+                                    <tr>
+                                    <td class="icone-ligne">
+                                    <a href="profile.php?id=<?= urlencode($user['id']); ?>">
+                                        <?= ucfirst(strtolower($user['pseudo'])); ?>
+                                    </a>
+                                        <?= $iconeEnLigne ?>
+                                        <?= $iconeHorsLigne ?>
+                                    </td>
+                                    </tr>
+                                <?php endforeach ?>
+                            </tbody>
+                        </table>
+                    </div><!--table-responsive-->
                 </div><!--users-->
             </div><!--col-md-4-->
-
+                <!-- Menu déroulant pour les smartphones -->
+                <select id="user-dropdown" class="form-select d-block d-md-none">
+                    <option value="" selected>Utilisateur</option>
+                    <?php foreach ($users as $user): ?>
+                        <option value="<?= $user['id']; ?>"><?= ucfirst(strtolower($user['pseudo'])); ?></option>
+                    <?php endforeach ?>
+                </select>
+                <br><br><br>
             <div class="col-md-6">
                 <div class="chat">
                     <div class="pseudo">
@@ -102,4 +111,8 @@
             xhttp.send();
         }, 500);
     </script>
+<footer class="bg-body-tertiary text-center fixed-bottom footer-custom">
+  <p>© By Abdelaziz 2024</p>
+</footer>
 </body>
+</html>

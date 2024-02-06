@@ -10,7 +10,6 @@
     <div class="container">
         <?php 
             if(isset($errorMsg)){ echo $errorMsg; }
-
                 if(isset($getHisQuestions)){
                     ?>
                     <div class="card">
@@ -45,6 +44,9 @@
                         }
                 }
         ?>
-    </div>
+    </div><!--container -->
+<footer class="bg-body-tertiary text-center fixed-bottom footer-custom">
+  <p>© By Abdelaziz 2024</p>
+</footer>
 </body>
 </html>

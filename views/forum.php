@@ -7,7 +7,7 @@
     <?php include('../includes/navbar.php'); ?>
     <br><br>
     <div class="container">
-        <h1>Forum</h1>
+        <h1 class="h1">Forum</h1>
         <br>
         <form method="GET">
             <div class="form-group row">
@@ -41,4 +41,8 @@
             }
         ?>
     </div><!--container -->
+<footer class="bg-body-tertiary text-center fixed-bottom footer-custom">
+  <p>© By Abdelaziz 2024</p>
+</footer>
 </body>
+</html>
