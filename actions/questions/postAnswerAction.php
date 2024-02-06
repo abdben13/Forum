@@ -8,7 +8,7 @@
         if(!empty($_POST['answer'])) {
             $user_answer = nl2br(htmlspecialchars($_POST['answer']));
 
-            $insertAnswer = $bdd->prepare("INSERT INTO answers(id_auteur, pseudo_auteur, id_question, contenu) VALUES (?, ?, ?, ?)");
+            $insertAnswer = $bdd->prepare("INSERT INTO answers(id_auteur, pseudo_auteur, id_question, contenu, date_answer) VALUES (?, ?, ?, ?, now())");
             $insertAnswer->execute(array($_SESSION['id'], $_SESSION['pseudo'], $idOfTheQuestion, $user_answer));
         }
     }

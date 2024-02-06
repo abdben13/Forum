@@ -15,7 +15,7 @@
                     ?>
                     <div class="card">
                         <div class="card-body">
-                            <h4>@<?= $user_pseudo ; ?></h4>
+                            <h4><?= ucfirst(strtolower($user_pseudo)) ; ?></h4>
                             <hr>
                             <p>Inscrit depuis le : <?= date('d/m/Y', strtotime($user_inscription)); ?></p>
                             <p><?= $count ?> message(s) dans le chat</p>
@@ -23,6 +23,7 @@
                         </div>
                     </div>
                     <br>
+                    <h4>Question(s) posée(s) :</h4>
                     <?php
                         while($question = $getHisQuestions->fetch()){
                             ?>
@@ -36,7 +37,7 @@
                                         <?= $question['description'];?>
                                     </div>
                                     <div class="card-footer">
-                                        Par <?= $question['pseudo_auteur'];?> le <?= $question['date_publication'];?>
+                                        le <?= $question['date_publication'];?>
                                     </div>
                                 </div>
                                 <br>

@@ -31,7 +31,7 @@
         }
     }
     ?>
-   
+<body> 
    <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -83,24 +83,23 @@
     function session() {
         window.location="../actions/users/logout.php";
     }
-    setTimeout(session, 60000); // 300000 millisecondes équivalent à 5 minutes
-</script>
-    <script> 
-    //actualisation de la page en utilisant AJAX
-    var message_box = document.querySelector('.messages_box');
-    setInterval(function(){
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function(){
-            if(this.readyState == 4 && this.status == 200){
-                message_box.innerHTML = this.responseText;
+    setTimeout(session, 300000); // 300000 millisecondes équivalent à 5 minutes
+    </script>
+        <script> 
+        //actualisation de la page en utilisant AJAX
+        var message_box = document.querySelector('.messages_box');
+        setInterval(function(){
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    message_box.innerHTML = this.responseText;
 
-                // Faire défiler vers le bas
-                message_box.scrollTop = message_box.scrollHeight;
-            }
-        };
-        xhttp.open("GET", "../actions/chat/messagesAction.php", true);
-        xhttp.send();
-    }, 500);
-</script>
+                    // Faire défiler vers le bas
+                    message_box.scrollTop = message_box.scrollHeight;
+                }
+            };
+            xhttp.open("GET", "../actions/chat/messagesAction.php", true);
+            xhttp.send();
+        }, 500);
+    </script>
 </body>
-</html>
