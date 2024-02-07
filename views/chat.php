@@ -65,7 +65,14 @@
                 <select id="user-dropdown" class="form-select d-block d-md-none">
                     <option value="" selected>Utilisateur</option>
                     <?php foreach ($users as $user): ?>
-                        <option value="<?= $user['id']; ?>"><?= ucfirst(strtolower($user['pseudo'])); ?></option>
+                        <option value="<?= $user['id']; ?>">
+                            <?= ucfirst(strtolower($user['pseudo'])); ?>
+                            <?php if ($user['en_ligne'] == 1): ?>
+                                (En ligne)
+                            <?php else: ?>
+                                (Hors ligne)
+                            <?php endif; ?>
+                        </option>
                     <?php endforeach ?>
                 </select>
                 <br><br><br>

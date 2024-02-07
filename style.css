@@ -124,16 +124,7 @@ table tr{
     align-items: center;
     justify-content: center;
 }
-.presentation {
-    font-size: 23px;
-    margin-top: 25px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    border-radius: 6px;
-    opacity: 95% ;
-    width: 50%;
-    margin-left: 25%;
-   
-}
+
 .icone-ligne {
     width: 10px; 
     height: 10px; 

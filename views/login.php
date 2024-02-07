@@ -20,6 +20,7 @@
             <button type="submit" class="btn btn-primary" name="validate">Se connecter</button>
             <br><br>
             <a href="signup.php"><p>Je n'ai pas de compte, je m'inscris</p></a>
+            <a href="forgot_password.php"><p>Mot de passe oublié ?</p></a>
         </form>
     </div><!--container-->
     <br><br>

@@ -41,6 +41,7 @@ if(isset($_POST['validate'])){
             $_SESSION['pseudo'] = $usersInfos['pseudo'];
             $_SESSION['email'] = $usersInfos['email'];
 
+            $_SESSION['signup_success_msg'] = "Votre compte a bien été créé. Vous êtes maintenant connecté à votre compte";
             //Redirection vers la page d'accueil
             header('Location: ../index.php');
         }else{

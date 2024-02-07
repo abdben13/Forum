@@ -2,6 +2,11 @@
     session_start();
     require('actions/questions/showAllQuestionIndexAction.php');
     require('actions/database.php');
+
+    if(isset($_SESSION['signup_success_msg'])) {
+      $msgSuccess = $_SESSION['signup_success_msg'];
+      unset($_SESSION['signup_success_msg']);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -62,25 +67,37 @@
       </div><!--collapse navbar-collapse-->
     </div><!--container-fluid -->
   </nav>
+      <?php 
+      if(isset($msgSuccess)) {
+        echo '<div class="alert alert-success text-center">' . $msgSuccess . '</div>';
+      }
+      ?>
     <div class="title">
         <h1>Dans ma bulle</h1>
         <img src="images/bulle.png" alt="bulle" class="img">
     </div>
-    <br>
+    <br><br>
     <div class="container">
       <div class="presentation">
-          <p>Un espace dédié à l'autisme. Nous sommes ici pour partager, informer et soutenir. Explorez nos ressources, échangez des expériences et découvrez une communauté bienveillante prête à accompagner chacun dans son parcours unique. Ensemble, nous cultivons la compréhension et la sensibilisation à l'autisme.</p>
+          <p>Notre mission est de fournir un espace dédié à l'autisme où chacun peut partager, informer et soutenir. Explorez nos ressources, échangez des expériences et découvrez une communauté bienveillante prête à accompagner chacun dans son parcours unique. Ensemble, nous cultivons la compréhension et la sensibilisation à l'autisme.</p>
+          <br>
+          <h3>Nos valeurs :</h3>
+          <ul>
+              <li>Partage</li>
+              <li>Entraide</li>
+              <li>Compréhension</li>
+              <li>Sensibilisation</li>
+          </ul>
       </div>
     </div>
     <br><br>
     <div class="container">
-      <br><br>
       <div class="definition">
           <h2>Qu'est-ce que l'autisme ?</h2>
           <p>L'autisme, également connu sous le nom de trouble du spectre autistique (TSA), est un trouble neurodéveloppemental qui affecte la communication, les interactions sociales et les comportements. Les personnes atteintes d'autisme peuvent présenter une gamme de symptômes et de sévérités différentes, allant de difficultés légères à sévères. Les caractéristiques courantes de l'autisme incluent des difficultés à comprendre les signaux sociaux, des intérêts restreints et répétitifs, ainsi que des sensibilités sensorielles particulières.</p>
       </div>
     </div>
-    <br><br>
+    <br>
     <div class="container">
       <h3 class="mt-5 mb-4">Articles et ressources :</h3>
       <div class="row">

@@ -10,7 +10,7 @@
     <br>
     <br>
     <div class="container">
-        <form class="container" method="POST">
+        <form class="container" method="POST" accept-charset="UTF-8">
             <?php 
                 if(isset($errorMsg)){ 
                     echo '<p>'.$errorMsg.'</p>';
