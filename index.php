@@ -1,5 +1,7 @@
 <?php 
     session_start();
+    require('actions/questions/showAllQuestionIndexAction.php');
+    require('actions/database.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -64,15 +66,97 @@
         <h1>Dans ma bulle</h1>
         <img src="images/bulle.png" alt="bulle" class="img">
     </div>
-    <div class="presentation">
-        <p>Un espace dédié à l'autisme. Nous sommes ici pour partager, informer et soutenir. Explorez nos ressources, échangez des expériences et découvrez une communauté bienveillante prête à accompagner chacun dans son parcours unique. Ensemble, nous cultivons la compréhension et la sensibilisation à l'autisme.</p>
+    <br>
+    <div class="container">
+      <div class="presentation">
+          <p>Un espace dédié à l'autisme. Nous sommes ici pour partager, informer et soutenir. Explorez nos ressources, échangez des expériences et découvrez une communauté bienveillante prête à accompagner chacun dans son parcours unique. Ensemble, nous cultivons la compréhension et la sensibilisation à l'autisme.</p>
+      </div>
     </div>
     <br><br>
     <div class="container">
-    </div><!--container -->    
-    <br>
-<footer class="bg-body-tertiary text-center fixed-bottom footer-custom">
-  <p>© By Abdelaziz 2024</p>
-</footer>
+      <br><br>
+      <div class="definition">
+          <h2>Qu'est-ce que l'autisme ?</h2>
+          <p>L'autisme, également connu sous le nom de trouble du spectre autistique (TSA), est un trouble neurodéveloppemental qui affecte la communication, les interactions sociales et les comportements. Les personnes atteintes d'autisme peuvent présenter une gamme de symptômes et de sévérités différentes, allant de difficultés légères à sévères. Les caractéristiques courantes de l'autisme incluent des difficultés à comprendre les signaux sociaux, des intérêts restreints et répétitifs, ainsi que des sensibilités sensorielles particulières.</p>
+      </div>
+    </div>
+    <br><br>
+    <div class="container">
+      <h3 class="mt-5 mb-4">Articles et ressources :</h3>
+      <div class="row">
+          <div class="col-md-6">
+              <div class="card mb-4">
+                  <div class="card-body">
+                      <h4 class="card-title">Nombre de personnes autistes en France</h4>
+                      <p class="card-text">Selon <a href="https://www.autisme.fr/" target="_blank">Autisme France</a>, environ 700 000 personnes sont touchées par l'autisme en France.</p>
+                      <a href="https://www.autisme.fr/" class="btn btn-primary" target="_blank">En savoir plus</a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div class="card mb-4">
+                  <div class="card-body">
+                      <h3 class="card-title">Nombre de personnes autistes en Europe</h3>
+                      <p class="card-text">Selon l'<a href="https://www.autismeurope.org/fr/qui-sommes-nous/le-spectre-autistique/" target="_blank">Autisme Europe</a>, environ 5 millions de personnes sont atteintes d'autisme en Europe.</p>
+                      <a href="https://www.autismeurope.org/fr/qui-sommes-nous/le-spectre-autistique/" class="btn btn-primary" target="_blank">En savoir plus</a>
+                  </div>
+              </div>
+          </div><!--col-md-6-->
+      </div><!--row-->
+    <!-- Liens vers des organisations de soutien -->
+        <h3 class="mt-5 mb-4">Organisations de soutien :</h3>
+        <ul>
+            <li><a href="https://www.autisme-france.fr/">Autisme France</a></li>
+            <li><a href="https://www.vaincrelautisme.org/">Vaincre l'Autisme</a></li>
+            <li><a href="https://www.autismeurope.org/">Autisme Europe</a></li>
+            <li><a href="https://www.autismspeaks.org/">Autism Speaks</a></li>
+        </ul>
+    </div><!--container -->
+    <br><br>
+    <div class="container">
+      <legend>Dernières questions dans le forum :</legend>
+      <fieldset>
+          <?php 
+          while($question = $getAllQuestions->fetch()){
+          ?>
+              <div class="card">
+                  <div class="card-header">
+                      <a href="views/article.php?id=<?= $question['id']; ?>" class="custom-link">
+                          <?= $question['titre'];?>
+                      </a>
+                  </div>
+                  <div class="card-body">
+                      <a href="views/article.php?id=<?= $question['id']; ?>" class="custom-card-content">
+                          <?= htmlspecialchars(substr($question['contenu'], 0, 50)); ?>... <!-- Affiche un aperçu du contenu, les 50 premiers caractères -->
+                      </a>
+                  </div>
+                  <div class="card-footer">
+                      Publié par <a href="views/profile.php?id=<?= $question['id_auteur']; ?>"><?= $question['pseudo_auteur'];?></a> le <?= $question['date_publication']; ?>
+                  </div>
+              </div><!--card -->
+              <br>
+          <?php
+          }
+          ?>
+      </fieldset>
+    </div><!--container -->
+    <br><br>
+    <div class="container text-center">
+      <h4 class="mb-4">Vidéos :</h4>
+      <div class="row justify-content-center">
+          <div class="col-md-4">
+              <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/o6nG_0CKITs?si=6bqoTsmincfzoTTP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/8zrJbcoPLRY?si=192aMXY5KdjIaYjd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+          </div>
+      </div><!--row-->
+    </div><!--container -->
+    <br><br>
+    <?php include "includes/footer.php";?>
 </body>
 </html>

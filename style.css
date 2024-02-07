@@ -132,6 +132,7 @@ table tr{
     opacity: 95% ;
     width: 50%;
     margin-left: 25%;
+   
 }
 .icone-ligne {
     width: 10px; 
@@ -156,6 +157,26 @@ a {
     font-size: 30px;
     text-align: center;
 }
+.center-input {
+    margin-left: auto; /* Ajoute une marge automatique à droite */
+    margin-right: auto; /* Ajoute une marge automatique à gauche */
+    display: block; 
+    border: 2px solid #ccc; 
+}
+.card-header{
+    background-color: #1877f2;
+}
+.custom-link{
+    color: #fff;
+}
+.custom-card-content{
+    color: black;
+}
+fieldset {
+    border: 2px solid #ccc; /* Ajoute une bordure de 2px d'épaisseur solide avec une couleur grise (#ccc) */
+    padding: 20px; /* Ajoute un remplissage de 20px à l'intérieur du cadre */
+}
+
 .footer-custom {
     color: #fff;
     background-color: #212529 !important;

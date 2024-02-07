@@ -28,12 +28,14 @@
                             ?>
                                 <div class="card">
                                     <div class="card-header">
-                                    <a href="article.php?id=<?= $question['id']; ?>">
+                                    <a href="article.php?id=<?= $question['id']; ?>" class="custom-link">
                                         <?= $question['titre'];?>
                                     </a>
                                     </div>
                                     <div class="card-body">
-                                        <?= $question['description'];?>
+                                        <a href="article.php?id=<?= $question['id']; ?>" class="custom-card-content">
+                                            <?= htmlspecialchars(substr($question['contenu'], 0, 50)); ?>... <!-- Affiche un aperçu du contenu, les 50 premiers caractères -->
+                                        </a>
                                     </div>
                                     <div class="card-footer">
                                         le <?= $question['date_publication'];?>
@@ -45,8 +47,7 @@
                 }
         ?>
     </div><!--container -->
-<footer class="bg-body-tertiary text-center fixed-bottom footer-custom">
-  <p>© By Abdelaziz 2024</p>
-</footer>
+    <br><br>
+    <?php include "../includes/footer.php";?>
 </body>
 </html>

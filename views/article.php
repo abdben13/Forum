@@ -29,7 +29,7 @@
                         ?>
                         <div class="card">
                             <div class="card-header">
-                                <a href="profile.php?id=<?= $answer['id_auteur']; ?>">
+                                <a href="profile.php?id=<?= $answer['id_auteur']; ?>" class="custom-link">
                                 <?= $answer['pseudo_auteur'];?></a>
                             </div>
                             <div class="card-body">
@@ -56,8 +56,7 @@
             }
         ?>    
     </div><!--container -->
-    <footer class="bg-body-tertiary text-center fixed-bottom footer-custom">
-  <p>© By Abdelaziz 2024</p>
-</footer>
+    <br><br>
+    <?php include "../includes/footer.php";?>
 </body>
 </html>

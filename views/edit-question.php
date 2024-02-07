@@ -19,10 +19,6 @@
                             <input type="text" class="form-control" name="title" value="<?= $question_title ?>">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Description</label>
-                            <textarea class="form-control" name="description"><?= $question_description ?></textarea>
-                        </div>
-                        <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Contenu</label>
                             <textarea class="form-control" name="content"><?= $question_content ?></textarea>
                         </div>
@@ -32,8 +28,7 @@
                 }
             ?>
      </div><!--container -->
-<footer class="bg-body-tertiary text-center fixed-bottom footer-custom">
-  <p>© By Abdelaziz 2024</p>
-</footer>
+     <br><br>
+     <?php include "../includes/footer.php";?>
 </body>
 </html>
