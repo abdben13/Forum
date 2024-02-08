@@ -1,5 +1,5 @@
 <?php
-require('../actions/users/resetPasswordAction.php');
+require('../actions/users/reset_password_processAction.php');
 include('../includes/head.php');
 ?>
 
@@ -16,11 +16,16 @@ include('../includes/head.php');
                 <p><?php echo $msgSuccess; ?></p>
             <?php } ?>
             <div class="mb-3">
-                <label class="form-label">Email</label>
-                <input type="text" class="form-control" name="email">
+                <label class="form-label">Nouveau mot de passe</label>
+                <input type="password" class="form-control" name="new_password">
             </div>
-            <button type="submit" class="btn btn-primary" name="submit">Réinitialiser le mot de passe</button>
-            <br><br>
+            <div class="mb-3">
+                <label class="form-label">Comfirmer le mot de passe</label>
+                <input type="password" class="form-control" name="confirm_password">
+            </div>
+            <input type="hidden" name="token" value="<?php echo $_GET['token']; ?>">
+    <button type="submit" class="btn btn-primary" name="submit">Réinitialiser le mot de passe</button>
+    <br><br>
             <a href="login.php"><p>Retour à la page de connexion</p></a>
         </form>
     </div><!--container-->
