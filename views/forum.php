@@ -20,6 +20,23 @@
             </div><!--form-group-->
         </form>
         <br>
+        <div class="card">
+            <div class="card-header">
+                <a href="article.php?id=<?= $getQuestionPresentationData['id']; ?>" class="custom-link">
+                    <?= $getQuestionPresentationData['titre'];?>
+                </a>
+                    <span class="badge bg-secondary">Épinglé</span>
+            </div>
+            <div class="card-body">
+                <a href="article.php?id=<?= $getQuestionPresentationData['id']; ?>" class="custom-card-content">
+                    <?= $getQuestionPresentationData['contenu']; ?>
+                </a>
+            </div>
+                <div class="card-footer">
+                    Publié par <a href="profile.php?id=<?= $getQuestionPresentationData['id_auteur']; ?>"><?= $getQuestionPresentationData['pseudo_auteur'];?></a> le <?= $getQuestionPresentationData['date_publication']; ?>
+                </div>
+        </div><!--card-->
+              <br>
         <?php 
             while($question = $getAllQuestions->fetch()){
                 ?>
