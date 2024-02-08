@@ -8,7 +8,7 @@ if(isset($_POST['validate'])){
         
         //Les données de la question
         $question_title = $_POST['title'];
-        $question_content = nl2br($_POST['content']);
+        $question_content = $_POST['content'];
         $question_date = date("d/m/Y");
         $question_id_author = $_SESSION['id'];
         $question_pseudo_author = $_SESSION['pseudo'];

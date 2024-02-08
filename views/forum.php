@@ -30,9 +30,9 @@
                             </a>
                         </div>
                         <div class="card-body">
-                        <a href="article.php?id=<?= $question['id']; ?>" class="custom-card-content">
-                            <?= htmlspecialchars(substr($question['contenu'], 0, 50)); ?>... <!-- Affiche un aperçu du contenu, les 50 premiers caractères -->
-                        </a>
+                            <a href="article.php?id=<?= $question['id']; ?>" class="custom-card-content">
+                                <?= mb_substr(htmlspecialchars($question['contenu']), 0, 50); ?>... <!-- Affiche un aperçu du contenu, les 50 premiers caractères -->
+                            </a>
                         </div>
                         <div class="card-footer">
                         Publié par <a href="profile.php?id=<?= $question['id_auteur']; ?>"><?= $question['pseudo_auteur'];?></a> le <?= $question['date_publication']; ?>
