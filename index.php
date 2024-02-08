@@ -144,7 +144,7 @@
                   </div>
                   <div class="card-body">
                       <a href="views/article.php?id=<?= $question['id']; ?>" class="custom-card-content">
-                        <?= mb_substr(htmlspecialchars($question['contenu']), 0, 50); ?>... <!-- Affiche un aperçu du contenu, les 50 premiers caractères -->
+                        <?= substr($question['contenu'], 0, 50); ?>... <!-- Affiche un aperçu du contenu, les 50 premiers caractères -->
                       </a>
                   </div>
                   <div class="card-footer">
