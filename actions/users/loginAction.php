@@ -34,8 +34,19 @@ if(isset($_POST['validate'])){
 
                 $req = $bdd->prepare("UPDATE users SET en_ligne = 1 WHERE id = ?");
                 $req->execute(array($user_id));
-                //Redirection vers la page d'accueil
-                header('Location: ../index.php');
+
+                $_SESSION['login_success_msg'] = "Vous êtes maintenant connecté à votre compte";
+
+                // Vérifier si une URL de redirection est stockée dans la session
+                if(isset($_SESSION['redirect_url'])) {
+                    //Vers l'URL stockée
+                    $redirect_url = $_SESSION['redirect_url'];
+                    unset($_SESSION['redirect_url']); // Supprimer l'URL stockée de la session
+                    header("Location: $redirect_url");
+                } else {
+                    //Vers la page d'accueil par défaut
+                    header("Location: ../index.php");
+                }
             }else{
                 $errorMsg = 'Mot de passe incorrect';
             }

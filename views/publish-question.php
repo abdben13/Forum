@@ -1,7 +1,7 @@
 <?php 
     require('../actions/users/securityAction.php'); 
     require('../actions/questions/publishQuestionAction.php');
-    
+    $_SESSION['redirect_url'] = $_SERVER['REQUEST_URI'];
 ?>
 
 <?php include ("../includes/head.php"); ?>

@@ -1,6 +1,7 @@
 <?php 
    require('../actions/users/securityAction.php'); 
 
+    $_SESSION['redirect_url'] = $_SERVER['REQUEST_URI'];
     $pseudo = $_SESSION['pseudo'];
     include "../includes/head.php";
     include "../includes/navbar.php";
