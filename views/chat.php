@@ -1,10 +1,19 @@
 <?php 
    require('../actions/users/securityAction.php'); 
 
+    $_SESSION['redirect_url'] = $_SERVER['REQUEST_URI'];
     $pseudo = $_SESSION['pseudo'];
     include "../includes/head.php";
     include "../includes/navbar.php";
     include "../actions/database.php";
+
+    if(isset($_SESSION['login_success_msg'])) {
+        $msgSuccess = $_SESSION['login_success_msg'];
+        unset($_SESSION['login_success_msg']);
+    }
+    if(isset($msgSuccess)) {
+        echo '<div class="alert alert-success text-center">' . $msgSuccess . '</div>';
+    }
 ?>
 <br><br>
 <?php

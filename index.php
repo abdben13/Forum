@@ -6,6 +6,9 @@
     if(isset($_SESSION['signup_success_msg'])) {
       $msgSuccess = $_SESSION['signup_success_msg'];
       unset($_SESSION['signup_success_msg']);
+    }elseif(isset($_SESSION['login_success_msg'])) {
+      $msgSuccess = $_SESSION['login_success_msg'];
+      unset($_SESSION['login_success_msg']);
     }
 ?>
 <!DOCTYPE html>
@@ -88,15 +91,15 @@
               <li>Compréhension</li>
               <li>Sensibilisation</li>
           </ul>
-      </div>
-    </div>
+      </div><!--presentation-->
+    </div><!--container-->
     <br><br>
     <div class="container">
       <div class="definition">
           <h2>Qu'est-ce que l'autisme ?</h2>
           <p>L'autisme, également connu sous le nom de trouble du spectre autistique (TSA), est un trouble neurodéveloppemental qui affecte la communication, les interactions sociales et les comportements. Les personnes atteintes d'autisme peuvent présenter une gamme de symptômes et de sévérités différentes, allant de difficultés légères à sévères. Les caractéristiques courantes de l'autisme incluent des difficultés à comprendre les signaux sociaux, des intérêts restreints et répétitifs, ainsi que des sensibilités sensorielles particulières.</p>
-      </div>
-    </div>
+      </div><!--definition-->
+    </div><!--container-->
     <br>
     <div class="container">
       <h3 class="mt-5 mb-4">Articles et ressources :</h3>
@@ -108,8 +111,8 @@
                       <p class="card-text">Selon <a href="https://www.autisme.fr/" target="_blank">Autisme France</a>, environ 700 000 personnes sont touchées par l'autisme en France.</p>
                       <a href="https://www.autisme.fr/" class="btn btn-primary" target="_blank">En savoir plus</a>
                   </div>
-              </div>
-          </div>
+              </div><!--card-->
+          </div><!--col-md-6-->
           <div class="col-md-6">
               <div class="card mb-4">
                   <div class="card-body">
@@ -133,22 +136,22 @@
     <div class="container">
       <legend>Dernières questions dans le forum :</legend>
       <fieldset>
-              <div class="card">
-                <div class="card-header">
-                    <a href="views/article.php?id=<?= $getQuestionPresentationData['id']; ?>" class="custom-link">
-                        <?= $getQuestionPresentationData['titre'];?>
-                    </a>
-                    <span class="badge bg-secondary">Épinglé</span>
-                </div>
-                <div class="card-body">
-                    <a href="views/article.php?id=<?= $getQuestionPresentationData['id']; ?>" class="custom-card-content">
-                        <?= $getQuestionPresentationData['contenu']; ?>
-                    </a>
-                </div>
-                <div class="card-footer">
-                    Publié par <a href="views/profile.php?id=<?= $getQuestionPresentationData['id_auteur']; ?>"><?= $getQuestionPresentationData['pseudo_auteur'];?></a> le <?= $getQuestionPresentationData['date_publication']; ?>
-                </div>
-              </div><!--card-->
+        <div class="card">
+          <div class="card-header">
+            <a href="views/article.php?id=<?= $getQuestionPresentationData['id']; ?>" class="custom-link">
+              <?= $getQuestionPresentationData['titre'];?>
+            </a>
+                <span class="badge bg-secondary">Épinglé</span>
+          </div>
+          <div class="card-body">
+            <a href="views/article.php?id=<?= $getQuestionPresentationData['id']; ?>" class="custom-card-content">
+              <?= $getQuestionPresentationData['contenu']; ?>
+            </a>
+          </div>
+          <div class="card-footer">
+            Publié par <a href="views/profile.php?id=<?= $getQuestionPresentationData['id_auteur']; ?>"><?= $getQuestionPresentationData['pseudo_auteur'];?></a> le <?= $getQuestionPresentationData['date_publication']; ?>
+          </div>
+        </div><!--card-->
               <br>
           <?php 
           while($question = $getAllQuestions->fetch()){
@@ -186,6 +189,11 @@
           <div class="col-md-4">
               <div class="embed-responsive embed-responsive-16by9">
                       <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/8zrJbcoPLRY?si=192aMXY5KdjIaYjd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/a_PecDgksow?si=cLt0m3rBcZ7leZDx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
               </div>
           </div>
       </div><!--row-->
