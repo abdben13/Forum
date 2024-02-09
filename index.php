@@ -10,7 +10,28 @@
       $msgSuccess = $_SESSION['login_success_msg'];
       unset($_SESSION['login_success_msg']);
     }
+
+    // Vérifier si l'utilisateur est connecté
+    if (isset($_SESSION['last_activity'])) {
+      // Durée d'inactivité autorisée (en secondes)
+      $inactive_duration = 60; // 5 minutes
+
+      // Calculer le temps écoulé depuis la dernière activité
+      $elapsed_time = time() - $_SESSION['last_activity'];
+
+      // Vérifier si l'utilisateur est inactif depuis plus de la durée autorisée
+      if ($elapsed_time > $inactive_duration) {
+          // Détruire la session et rediriger vers la page de déconnexion
+          session_destroy();
+          header("Location: actions/users/logout.php");
+          exit;
+      }
+    }
+
+    // Mettre à jour le temps de dernière activité
+    $_SESSION['last_activity'] = time();
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -200,5 +221,25 @@
     </div><!--container -->
     <br><br>
     <?php include "includes/footer.php";?>
+    <script>
+      // Stocker l'ID du minuteur
+      let logoutTimer;
+
+      // Fonction pour rediriger vers la page de déconnexion après 1 minute d'inactivité
+      function autoLogout() {
+        logoutTimer = setTimeout(function() {
+          window.location.href = 'actions/users/logout.php';
+        }, 60000); // 1 minute en millisecondes
+      }
+
+      // Démarrer la fonction au chargement de la page
+      autoLogout();
+
+      // Réinitialiser le minuteur lorsqu'une activité est détectée
+      document.addEventListener('mousemove', function() {
+        clearTimeout(logoutTimer); // Utiliser clearTimeout avec l'ID du minuteur
+        autoLogout();
+      });
+    </script>
 </body>
 </html>
