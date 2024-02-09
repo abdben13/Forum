@@ -1,8 +1,8 @@
 <?php 
-   require('../actions/users/securityAction.php'); 
-
+    session_start();
     $_SESSION['redirect_url'] = $_SERVER['REQUEST_URI'];
-    $pseudo = $_SESSION['pseudo'];
+    // Vérifie si le pseudo est présent dans la session, sinon le définir à null
+    $pseudo = isset($_SESSION['pseudo']) ? $_SESSION['pseudo'] : null; 
     include "../includes/head.php";
     include "../includes/navbar.php";
     include "../actions/database.php";
@@ -25,7 +25,6 @@
         // Récupérons le message 
         $message = $_POST['message'];
 
-        
         // Vérifions si le champ n'est pas vide
         if(isset($message) && $message != "") {
             // Insérer le message dans la base de données
@@ -88,8 +87,15 @@
             <div class="col-md-6">
                 <div class="chat">
                     <div class="pseudo">
-                        <span><?= strtoupper($pseudo) ?></span>
-                        <a href="../actions/users/logout.php" class="btn btn-danger">Déconnexion</a>
+                        <span><?= isset($pseudo) ? strtoupper($pseudo) : 'Visiteur' ?></span>
+                        <?php if(isset($_SESSION['pseudo'])) {?>
+                            <a href="../actions/users/logout.php" class="btn btn-danger">Déconnexion</a>
+                        <?php 
+                        }else{?>
+                            <a href="login.php" class="btn btn-primary">Se connecter</a>
+                        <?php 
+                        }
+                        ?>
                     </div><!--pseudo-->
                     
                     <div class="messages_box">Chargement ...</div>
@@ -98,7 +104,14 @@
                         <div class="form-group">
                             <textarea class="form-control" name="message" rows="2" placeholder="Votre message"></textarea>
                         </div>
+                        <?php if($pseudo) { // Vérifie si l'utilisateur est connecté ?>
                         <button type="submit" class="btn btn-primary send_msg" name="send">Envoyer</button>
+                    <?php } else { ?>
+                        <br>
+                        <div class="alert alert-warning" role="alert">
+                            Vous devez être connecté pour envoyer un message.
+                        </div>
+                    <?php } ?>
                     </form>
                 </div><!--chat-->
             </div><!--col-md-6-->
