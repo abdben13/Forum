@@ -23,11 +23,11 @@ include('../actions/users/sendEmailContactAction.php');
                 </div>
             <?php endif; ?>
             <div class="mb-3">
-                <label for="pseudo" class="form-label">Pseudo</label>
+                <label for="pseudo" class="form-label">Pseudo *</label>
                 <input type="text" class="form-control" name="pseudo" required>
             </div>
             <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
+                <label for="email" class="form-label">Email *</label>
                 <input type="email" class="form-control" name="email" required>
             </div>
             <div class="mb-3">
@@ -35,6 +35,7 @@ include('../actions/users/sendEmailContactAction.php');
                 <textarea class="form-control" name="message" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary" name="validate">Envoyer</button>
+            <p>* Champs obligatoires</p>
         </form>
     </div><!--container -->
     <br><br>
