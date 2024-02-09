@@ -2,14 +2,11 @@
     require('../actions/users/securityAction.php'); 
     require('../actions/questions/publishQuestionAction.php');
     $_SESSION['redirect_url'] = $_SERVER['REQUEST_URI'];
-<<<<<<< HEAD
-=======
 
     if(isset($_SESSION['login_success_msg'])) {
         $msgSuccess = $_SESSION['login_success_msg'];
         unset($_SESSION['login_success_msg']);
     }
->>>>>>> 70d912a58928d6f0c4b239f195ad756105cb0a8e
 ?>
 
 <?php include ("../includes/head.php"); ?>

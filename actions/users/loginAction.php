@@ -17,23 +17,6 @@ require('../actions/database.php');
             $checkIfUserExists = $bdd->prepare('SELECT * FROM users WHERE pseudo = ? OR email = ?');
             $checkIfUserExists->execute(array($user_pseudo, $user_email));
 
-<<<<<<< HEAD
-                $req = $bdd->prepare("UPDATE users SET en_ligne = 1 WHERE id = ?");
-                $req->execute(array($user_id));
-
-                $_SESSION['login_success_msg'] = "Vous êtes maintenant connecté à votre compte";
-
-                // Vérifier si une URL de redirection est stockée dans la session
-                if(isset($_SESSION['redirect_url'])) {
-                    //Vers l'URL stockée
-                    $redirect_url = $_SESSION['redirect_url'];
-                    unset($_SESSION['redirect_url']); // Supprimer l'URL stockée de la session
-                    header("Location: $redirect_url");
-                } else {
-                    //Vers la page d'accueil par défaut
-                    header("Location: ../index.php");
-                }
-=======
             if($checkIfUserExists->rowCount() > 0){
                 
                 //Recupération des données de l'utilisateur
@@ -69,7 +52,6 @@ require('../actions/database.php');
                     $errorMsg = 'Mot de passe incorrect';
                 }
         
->>>>>>> 70d912a58928d6f0c4b239f195ad756105cb0a8e
             }else{
                 $errorMsg = "Votre pseudo est incorrect";
             }
@@ -77,8 +59,4 @@ require('../actions/database.php');
         $errorMsg = "Veuillez compléter tous les champs";
         }
     }
-<<<<<<< HEAD
-}
-=======
->>>>>>> 70d912a58928d6f0c4b239f195ad756105cb0a8e
 ?>
