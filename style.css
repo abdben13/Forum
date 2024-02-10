@@ -144,6 +144,9 @@ a {
 .send_msg{
     margin-top: 5px;
 }
+.btn-retour {
+    margin-left: 120px;
+}
 .h1{
     font-size: 30px;
     text-align: center;

@@ -41,6 +41,11 @@
     }
     ?>
 <body> 
+    <div class="d-flex justify-content-between my-4">
+        <div class="btn-retour">
+            <a href="javascript:history.back()" class="btn btn-primary">Retour</a>
+        </div>
+    </div>
    <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -134,6 +139,20 @@
             xhttp.open("GET", "../actions/chat/messagesAction.php", true);
             xhttp.send();
         }, 500);
+    </script>
+    <script>
+    // Récupère l'élément select
+    const userDropdown = document.getElementById('user-dropdown');
+
+    // Écoute les changements
+    userDropdown.addEventListener('change', function() {
+        // Récupère l'ID de l'utilisateur sélectionné
+        const userId = userDropdown.value;
+        if (userId) {
+            // Redirige vers la page de profil avec l'ID de l'utilisateur
+            window.location.href = 'profile.php?id=' + userId;
+        }
+    });
     </script>
     <br><br>
 <?php include "../includes/footer.php";?>
