@@ -1,6 +1,8 @@
 <?php 
     session_start();
+    $_SESSION['redirect_url'] = $_SERVER['REQUEST_URI'];
     require('../actions/users/showOneUsersProfileAction.php');
+    require('../actions/users/logoutAutoAction.php');
 ?>
 
     <?php include('../includes/head.php'); ?>

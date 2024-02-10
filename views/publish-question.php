@@ -1,6 +1,7 @@
 <?php 
     require('../actions/users/securityAction.php'); 
     require('../actions/questions/publishQuestionAction.php');
+    require('../actions/users/logoutAutoAction.php');
     $_SESSION['redirect_url'] = $_SERVER['REQUEST_URI'];
 
     if(isset($_SESSION['login_success_msg'])) {

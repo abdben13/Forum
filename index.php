@@ -11,20 +11,19 @@
       unset($_SESSION['login_success_msg']);
     }
 
-    // Vérifier si l'utilisateur est connecté
+    // Vérifie si l'utilisateur est connecté
     if (isset($_SESSION['last_activity'])) {
       // Durée d'inactivité autorisée (en secondes)
       $inactive_duration = 60; // 5 minutes
 
-      // Calculer le temps écoulé depuis la dernière activité
+      // Calcule le temps écoulé depuis la dernière activité
       $elapsed_time = time() - $_SESSION['last_activity'];
 
       // Vérifier si l'utilisateur est inactif depuis plus de la durée autorisée
       if ($elapsed_time > $inactive_duration) {
-          // Détruire la session et rediriger vers la page de déconnexion
+          // Détruit la session 
           session_destroy();
           header("Location: actions/users/logout.php");
-          exit;
       }
     }
 
@@ -100,7 +99,11 @@
         <h1>Dans ma bulle</h1>
         <img src="images/bulle.png" alt="bulle" class="img">
     </div>
-    <br><br>
+    <br>
+    <div class="info text-center">
+      <h4>Info: l'autisme n'est pas une maladie !</h4>
+    </div>
+    <br>
     <div class="container">
       <div class="presentation">
           <p>Notre mission est de fournir un espace dédié à l'autisme où chacun peut partager, informer et soutenir. Explorez nos ressources, échangez des expériences et découvrez une communauté bienveillante prête à accompagner chacun dans son parcours unique. Ensemble, nous cultivons la compréhension et la sensibilisation à l'autisme.</p>
@@ -222,22 +225,23 @@
     <br><br>
     <?php include "includes/footer.php";?>
     <script>
-      // Stocker l'ID du minuteur
+      // Stocke l'ID du minuteur
       let logoutTimer;
 
-      // Fonction pour rediriger vers la page de déconnexion après 1 minute d'inactivité
+      // Fonction pour rediriger vers la page de déconnexion
       function autoLogout() {
         logoutTimer = setTimeout(function() {
           window.location.href = 'actions/users/logout.php';
         }, 60000); // 1 minute en millisecondes
       }
 
-      // Démarrer la fonction au chargement de la page
+      // Démarre la fonction au chargement de la page
       autoLogout();
 
-      // Réinitialiser le minuteur lorsqu'une activité est détectée
+      // Réinitialise le minuteur lorsqu'une activité est détectée
       document.addEventListener('mousemove', function() {
-        clearTimeout(logoutTimer); // Utiliser clearTimeout avec l'ID du minuteur
+        // Utilise clearTimeout avec l'ID du minuteur
+        clearTimeout(logoutTimer); 
         autoLogout();
       });
     </script>

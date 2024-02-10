@@ -1,8 +1,11 @@
 <?php 
     session_start();
+    $_SESSION['redirect_url'] = $_SERVER['REQUEST_URI'];
     require('../actions/questions/showArticleContentAction.php');
     require('../actions/questions/postAnswerAction.php');
     require('../actions/questions/showAllAnswersOfQuestionAction.php');
+    require('../actions/users/logoutAutoAction.php');
+    
     $_SESSION['redirect_url'] = $_SERVER['REQUEST_URI'];
     ?>
     <?php include '../includes/head.php'; ?>

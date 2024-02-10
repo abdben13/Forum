@@ -148,6 +148,9 @@ a {
     font-size: 30px;
     text-align: center;
 }
+.info{
+    color: red;
+}
 .center-input {
     margin-left: auto; /* Ajoute une marge automatique à droite */
     margin-right: auto; /* Ajoute une marge automatique à gauche */

@@ -1,7 +1,9 @@
 <?php 
     require('../actions/users/securityAction.php');
+    $_SESSION['redirect_url'] = $_SERVER['REQUEST_URI'];
     require('../actions/questions/getInfosOfEditedQuestionAction.php');
     require('../actions/questions/editQuestionAction.php');
+    require('../actions/users/logoutAutoAction.php');
 ?>
 
 <?php include('../includes/head.php');?>

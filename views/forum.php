@@ -1,7 +1,9 @@
 <?php 
     session_start();
+    $_SESSION['redirect_url'] = $_SERVER['REQUEST_URI'];
     require('../actions/questions/showAllQuestionAction.php');
     include('../includes/head.php');
+    require('../actions/users/logoutAutoAction.php');
 ?>
 <body>
     <?php include('../includes/navbar.php'); ?>

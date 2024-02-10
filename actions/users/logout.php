@@ -2,6 +2,8 @@
 session_start();
 require('../database.php');
 
+$redirect_url = "../../index.php";
+
 if (isset($_SESSION['id'])) {
     $user_id = $_SESSION['id'];
 
@@ -9,8 +11,17 @@ if (isset($_SESSION['id'])) {
     $req->execute();
 
     session_destroy();
-    header('Location: ../../index.php');
+    if(isset($_SESSION['redirect_url'])) {
+        //Vers l'URL stockée
+        $redirect_url = $_SESSION['redirect_url'];
+        // Supprime l'URL stockée dans la session
+        unset($_SESSION['redirect_url']); 
+        header("Location: $redirect_url");
+    } else {
+        //Vers la page d'accueil par défaut
+        header("Location: ../../index.php");
+    }
 }else{
-    header('Location: ../../index.php');
+    header("Location: $redirect_url");
 }
 ?>
