@@ -130,6 +130,10 @@ table tr{
     height: 10px; 
     margin-right: 5px; 
 }
+.img_louise{
+    width: 250px; 
+    height: 300px;
+}
 .link  {
     color: #1877f2;
     font-size: 14px;

@@ -133,7 +133,9 @@
                   <div class="card-body">
                       <h4 class="card-title">Nombre de personnes autistes en France</h4>
                       <p class="card-text">Selon <a href="https://www.autisme.fr/" target="_blank">Autisme France</a>, environ 700 000 personnes sont touchées par l'autisme en France.</p>
-                      <a href="https://www.autisme.fr/" class="btn btn-primary" target="_blank">En savoir plus</a>
+                      <div style="text-align: center;">
+                        <a href="https://www.autisme.fr/" class="btn btn-primary" target="_blank">En savoir plus</a>
+                      </div>
                   </div>
               </div><!--card-->
           </div><!--col-md-6-->
@@ -142,7 +144,24 @@
                   <div class="card-body">
                       <h3 class="card-title">Nombre de personnes autistes en Europe</h3>
                       <p class="card-text">Selon l'<a href="https://www.autismeurope.org/fr/qui-sommes-nous/le-spectre-autistique/" target="_blank">Autisme Europe</a>, environ 5 millions de personnes sont atteintes d'autisme en Europe.</p>
-                      <a href="https://www.autismeurope.org/fr/qui-sommes-nous/le-spectre-autistique/" class="btn btn-primary" target="_blank">En savoir plus</a>
+                      <div style="text-align: center;">
+                        <a href="https://www.autismeurope.org/fr/qui-sommes-nous/le-spectre-autistique/" class="btn btn-primary" target="_blank">En savoir plus</a>
+                      </div>    
+                  </div>
+              </div>
+          </div><!--col-md-6-->
+          <div class="col-md-6">
+              <div class="card mb-4">
+                  <div class="card-body">
+                      <h3 class="card-title">Livre écrit par Aicha Ghembaza (maman de Louise)</h3>
+                      <p class="card-text"><a href="https://www.amazon.fr/Trop-belle-pour-ce-monde/dp/B0CJ2ZTK6Z" target="_blank">Trop belle pour ce monde</a>, Trop belle pour ce monde est le livre photo du film documentaire. J’aurais aimé avoir la capacité, l’énergie et le courage de vous raconter le long cauchemar éveillé que nous avons traversé pour aider notre enfant...</p>
+                      <div style="text-align: center;">
+                        <img src="images/louise.jpg" class="img_louise">
+                      </div>
+                      <br>
+                      <div style="text-align: center;">
+                          <a href="https://www.amazon.fr/Trop-belle-pour-ce-monde/dp/B0CJ2ZTK6Z" class="btn btn-primary" target="_blank">En savoir plus</a>
+                      </div>                  
                   </div>
               </div>
           </div><!--col-md-6-->
