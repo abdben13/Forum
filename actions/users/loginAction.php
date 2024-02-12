@@ -36,7 +36,7 @@ require('../actions/database.php');
                     $req->execute(array($user_id));
 
                     $_SESSION['login_success_msg'] = "Vous êtes maintenant connecté à votre compte";
-                    
+    
                     // Vérifier si une URL de redirection est stockée dans la session
                     if(isset($_SESSION['redirect_url'])) {
                         //Vers l'URL stockée

@@ -4,19 +4,9 @@
     // Vérifie si le pseudo est présent dans la session, sinon le définir à null
     $pseudo = isset($_SESSION['pseudo']) ? $_SESSION['pseudo'] : null; 
     include "../includes/head.php";
-    include "../includes/navbar.php";
     include "../actions/database.php";
     require('../actions/users/logoutAutoAction.php');
-
-    if(isset($_SESSION['login_success_msg'])) {
-        $msgSuccess = $_SESSION['login_success_msg'];
-        unset($_SESSION['login_success_msg']);
-    }
-    if(isset($msgSuccess)) {
-        echo '<div class="alert alert-success text-center">' . $msgSuccess . '</div>';
-    }
 ?>
-<br><br>
 <?php
    $reqUsers = $bdd->prepare("SELECT * FROM users");
    $reqUsers->execute();
@@ -39,8 +29,19 @@
             header('Location:chat.php');
         }
     }
+
+    if(isset($_SESSION['login_success_msg'])) {
+        $msgSuccess = $_SESSION['login_success_msg'];
+        unset($_SESSION['login_success_msg']);
+    }
     ?>
-<body> 
+<body>
+    <?php include "../includes/navbar.php"; ?>
+    <?php
+        if(isset($msgSuccess)) {
+            echo '<div class="alert alert-success text-center">' . $msgSuccess . '</div>';
+        }
+    ?>
     <div class="d-flex justify-content-between my-4">
         <div class="btn-retour">
             <a href="javascript:history.back()" class="btn btn-primary">Retour</a>

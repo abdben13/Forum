@@ -4,9 +4,24 @@
     require('../actions/questions/showAllQuestionAction.php');
     include('../includes/head.php');
     require('../actions/users/logoutAutoAction.php');
+
+    if(isset($_SESSION['login_success_msg'])) {
+        $msgSuccess = $_SESSION['login_success_msg'];
+        unset($_SESSION['login_success_msg']);
+      }
 ?>
 <body>
     <?php include('../includes/navbar.php'); ?>
+    <?php 
+      if(isset($msgSuccess)) {
+        echo '<div class="alert alert-success text-center">' . $msgSuccess . '</div>';
+      }
+    ?>
+    <div class="d-flex justify-content-between my-4">
+        <div class="btn-retour">
+            <a href="javascript:history.back()" class="btn btn-primary">Retour</a>
+        </div>
+    </div>
     <br><br>
     <div class="container">
         <h1 class="h1">Forum</h1>
