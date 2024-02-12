@@ -13,6 +13,9 @@
           <a class="nav-link" href="chat.php">Chat</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="articles_ressources.php">Articles et ressources</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="publish-question.php">Publier une question</a>
         </li>
         

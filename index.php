@@ -60,6 +60,9 @@
             <a class="nav-link" href="views/chat.php">Chat</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="views/articles_ressources.php">Articles et ressources</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="views/publish-question.php">Publier une question</a>
           </li>
             
@@ -142,7 +145,7 @@
           <div class="col-md-6">
               <div class="card mb-4">
                   <div class="card-body">
-                      <h3 class="card-title">Nombre de personnes autistes en Europe</h3>
+                      <h4 class="card-title">Nombre de personnes autistes en Europe</h4>
                       <p class="card-text">Selon l'<a href="https://www.autismeurope.org/fr/qui-sommes-nous/le-spectre-autistique/" target="_blank">Autisme Europe</a>, environ 5 millions de personnes sont atteintes d'autisme en Europe.</p>
                       <div class="card_index">
                         <a href="https://www.autismeurope.org/fr/qui-sommes-nous/le-spectre-autistique/" class="btn btn-primary" target="_blank">En savoir plus</a>
@@ -153,7 +156,7 @@
           <div class="col-md-6">
               <div class="card mb-4">
                   <div class="card-body">
-                      <h3 class="card-title">Livre écrit par Aicha Ghembaza (maman de Louise)</h3>
+                      <h4 class="card-title">Livre écrit par Aicha Ghembaza (maman de Louise)</h4>
                       <p class="card-text"><a href="https://www.amazon.fr/Trop-belle-pour-ce-monde/dp/B0CJ2ZTK6Z" target="_blank">Trop belle pour ce monde</a>, Trop belle pour ce monde est le livre photo du film documentaire. J’aurais aimé avoir la capacité, l’énergie et le courage de vous raconter le long cauchemar éveillé que nous avons traversé pour aider notre enfant...</p>
                       <div class="card_index">
                         <img src="images/louise.jpg" class="img_index">
@@ -168,7 +171,7 @@
           <div class="col-md-6">
               <div class="card mb-4">
                   <div class="card-body">
-                      <h3 class="card-title">Journée mondiale de sensibilisation à l'autisme</h3>
+                      <h4 class="card-title">Journée mondiale de sensibilisation à l'autisme</h4>
                       <p class="card-text"> Pourquoi le bleu pour la Journée de l'autisme ? Car cette couleur symbolise le rêve et la vie, parce qu'elle est douce et apaisante, et semble appréciée des personnes autistes qui connaissent souvent des troubles sensoriels.</p>
                       <div class="card_index">
                         <img src="images/journee_autisme.png" class="img_index" alt="Journée mondiale de sensibilisation à l'autisme" target="_blank">
@@ -180,6 +183,10 @@
                   </div>
               </div>
           </div><!--col-md-6-->
+          <br>
+          <div class="card_index">
+            <a href="views/articles_ressources.php" class="btn btn-primary">Voir plus d'articles et ressources</a>
+          </div>
       </div><!--row-->
     <!-- Liens vers des organisations de soutien -->
         <h3 class="mt-5 mb-4">Organisations de soutien :</h3>
