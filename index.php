@@ -133,7 +133,7 @@
                   <div class="card-body">
                       <h4 class="card-title">Nombre de personnes autistes en France</h4>
                       <p class="card-text">Selon <a href="https://www.autisme.fr/" target="_blank">Autisme France</a>, environ 700 000 personnes sont touchées par l'autisme en France.</p>
-                      <div style="text-align: center;">
+                      <div class="card_index">
                         <a href="https://www.autisme.fr/" class="btn btn-primary" target="_blank">En savoir plus</a>
                       </div>
                   </div>
@@ -144,7 +144,7 @@
                   <div class="card-body">
                       <h3 class="card-title">Nombre de personnes autistes en Europe</h3>
                       <p class="card-text">Selon l'<a href="https://www.autismeurope.org/fr/qui-sommes-nous/le-spectre-autistique/" target="_blank">Autisme Europe</a>, environ 5 millions de personnes sont atteintes d'autisme en Europe.</p>
-                      <div style="text-align: center;">
+                      <div class="card_index">
                         <a href="https://www.autismeurope.org/fr/qui-sommes-nous/le-spectre-autistique/" class="btn btn-primary" target="_blank">En savoir plus</a>
                       </div>    
                   </div>
@@ -155,12 +155,27 @@
                   <div class="card-body">
                       <h3 class="card-title">Livre écrit par Aicha Ghembaza (maman de Louise)</h3>
                       <p class="card-text"><a href="https://www.amazon.fr/Trop-belle-pour-ce-monde/dp/B0CJ2ZTK6Z" target="_blank">Trop belle pour ce monde</a>, Trop belle pour ce monde est le livre photo du film documentaire. J’aurais aimé avoir la capacité, l’énergie et le courage de vous raconter le long cauchemar éveillé que nous avons traversé pour aider notre enfant...</p>
-                      <div style="text-align: center;">
-                        <img src="images/louise.jpg" class="img_louise">
+                      <div class="card_index">
+                        <img src="images/louise.jpg" class="img_index">
                       </div>
                       <br>
-                      <div style="text-align: center;">
+                      <div class="card_index">
                           <a href="https://www.amazon.fr/Trop-belle-pour-ce-monde/dp/B0CJ2ZTK6Z" class="btn btn-primary" target="_blank">En savoir plus</a>
+                      </div>                  
+                  </div>
+              </div>
+          </div><!--col-md-6-->
+          <div class="col-md-6">
+              <div class="card mb-4">
+                  <div class="card-body">
+                      <h3 class="card-title">Journée mondiale de sensibilisation à l'autisme</h3>
+                      <p class="card-text"> Pourquoi le bleu pour la Journée de l'autisme ? Car cette couleur symbolise le rêve et la vie, parce qu'elle est douce et apaisante, et semble appréciée des personnes autistes qui connaissent souvent des troubles sensoriels.</p>
+                      <div class="card_index">
+                        <img src="images/journee_autisme.png" class="img_index" alt="Journée mondiale de sensibilisation à l'autisme" target="_blank">
+                      </div>
+                      <br>
+                      <div class="card_index">
+                          <a href="https://handicap.gouv.fr/journee-mondiale-de-sensibilisation-lautisme-le-2-avril" class="btn btn-primary" target="_blank">En savoir plus</a>
                       </div>                  
                   </div>
               </div>
@@ -177,7 +192,7 @@
     </div><!--container -->
     <br><br>
     <div class="container">
-      <legend>Dernières questions dans le forum :</legend>
+      <legend>Dernières activités dans le forum :</legend>
       <fieldset>
         <div class="card">
           <div class="card-header">

@@ -131,9 +131,6 @@
             xhttp.onreadystatechange = function(){
                 if(this.readyState == 4 && this.status == 200){
                     message_box.innerHTML = this.responseText;
-
-                    // Faire défiler vers le bas
-                    message_box.scrollTop = message_box.scrollHeight;
                 }
             };
             xhttp.open("GET", "../actions/chat/messagesAction.php", true);
@@ -149,7 +146,7 @@
         // Récupère l'ID de l'utilisateur sélectionné
         const userId = userDropdown.value;
         if (userId) {
-            // Redirige vers la page de profil avec l'ID de l'utilisateur
+            //Page de profil via l'ID de l'user
             window.location.href = 'profile.php?id=' + userId;
         }
     });

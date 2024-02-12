@@ -130,9 +130,12 @@ table tr{
     height: 10px; 
     margin-right: 5px; 
 }
-.img_louise{
+.img_index{
     width: 250px; 
     height: 300px;
+}
+.card_index{
+    text-align: center;
 }
 .link  {
     color: #1877f2;

@@ -30,6 +30,11 @@
             $countMessages->execute(array($user_pseudo ));
             $count = $countMessages->rowCount();
 
+            //Recuperation puis calcul du nombre de reponses
+            $countAnswers = $bdd->prepare("SELECT * FROM answers WHERE id_auteur =? ORDER BY id DESC");
+            $countAnswers->execute(array($idOfUser));
+            $countGetAnswers = $countAnswers->rowCount();
+
         }else{
             $errorMsg = "Aucun utilisateur trouvé";
         }
