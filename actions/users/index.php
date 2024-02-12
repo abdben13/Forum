@@ -7,6 +7,10 @@
       $msgSuccess = $_SESSION['signup_success_msg'];
       unset($_SESSION['signup_success_msg']);
     }
+    if(isset($_GET['msgSuccessLogout'])) {
+      $msgSuccessLogout = $_GET['msgSuccessLogout'];
+      unset($_GET['msgSuccessLogout']);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -70,6 +74,9 @@
       <?php 
       if(isset($msgSuccess)) {
         echo '<div class="alert alert-success text-center">' . $msgSuccess . '</div>';
+      }
+      if(isset($msgSuccessLogout)) {
+        echo '<div class="alert alert-success text-center">' . $msgSuccessLogout . '</div>';
       }
       ?>
     <div class="title">

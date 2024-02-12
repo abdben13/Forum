@@ -19,7 +19,7 @@ if(isset($_POST['submit'])){
 
         //e-mail de réinitialisation du mdp
         $to = $user['email'];
-        $subject = 'Réinitialisation du mot de passe';
+        $subject = 'Reinitialisation du mot de passe';
         $message = 'Bonjour, veuillez cliquer sur le lien suivant pour réinitialiser votre mot de passe : http://localhost/Forum/reset_password.php?token='.$token;
         $headers = 'From: http://localhost/Forum/index.php' . "\r\n" .
             'Reply-To: http://localhost/Forum/index.php' . "\r\n" .

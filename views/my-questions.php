@@ -11,8 +11,9 @@
     <br><br>
     <div class="container">
         <?php 
-            while($question = $getAllMyQuestions->fetch()){
-            ?>
+            if($getAllMyQuestions->rowCount() > 0) {
+                while($question = $getAllMyQuestions->fetch()) {
+        ?>
             <div class="card">
                 <h5 class="card-header">
                     <a href="article.php?id=<?= $question['id']; ?>" class="custom-link">
@@ -28,7 +29,10 @@
                 </div>
             </div><!--card -->
             <br>
-            <?php
+        <?php
+                }
+            } else {
+                echo "Aucune question n'a été posée";
             }
         ?>
     </div><!--container -->
