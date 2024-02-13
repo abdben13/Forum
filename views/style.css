@@ -118,6 +118,17 @@ table tr{
     width: 80px; 
     height: 80px;
 }
+.img_index{
+    width: 250px; 
+    height: 300px;
+}
+.card_index_canal_autisme{
+    width: 350px; 
+    height: 150px;
+}
+.card_index{
+    text-align: center;
+}
 .title {
     margin-top: 20px;
     display: flex;
@@ -129,14 +140,6 @@ table tr{
     width: 10px; 
     height: 10px; 
     margin-right: 5px; 
-}
-.img_index{
-    width: 250px; 
-    height: 300px;
-}
-
-.card_index{
-    text-align: center;
 }
 .link  {
     color: #1877f2;
@@ -153,7 +156,7 @@ a {
     margin-top: 5px;
 }
 .btn-retour {
-    margin-left: 120px;
+    margin-left: 80px;
 }
 .h1{
     font-size: 30px;
@@ -168,14 +171,17 @@ a {
     display: block; 
     border: 2px solid #ccc; 
 }
+
 .card-header{
     background-color: #1877f2;
 }
 .custom-link{
     color: #fff;
+    text-decoration: 0;
 }
 .custom-card-content{
     color: black;
+    text-decoration: none; 
 }
 fieldset {
     border: 2px solid #ccc; /* Ajoute une bordure de 2px d'épaisseur solide avec une couleur grise (#ccc) */
@@ -190,4 +196,16 @@ fieldset {
     #user-table {
         display: none;
     }
+}
+@media only screen and (max-width: 768px) {
+  .custom-link {
+    text-decoration: none;
+  }
+  .btn-retour {
+    margin-left: 15px;
+  }
+  .card_index_canal_autisme{
+    width: 250px; 
+    height: 100px;
+}
 }

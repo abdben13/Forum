@@ -2,6 +2,7 @@
     session_start();
     require('actions/questions/showAllQuestionIndexAction.php');
     require('actions/database.php');
+    require('actions/articles/articlesAction.php');
 
     if(isset($_SESSION['signup_success_msg'])) {
       $msgSuccess = $_SESSION['signup_success_msg'];
@@ -11,7 +12,7 @@
       unset($_SESSION['login_success_msg']);
     }
 
-    // Vérifie si l'utilisateur est connecté
+    // Vérifie si l'user est connecté
     if (isset($_SESSION['last_activity'])) {
       // Durée d'inactivité autorisée (en secondes)
       $inactive_duration = 60; // 5 minutes
@@ -19,7 +20,7 @@
       // Calcule le temps écoulé depuis la dernière activité
       $elapsed_time = time() - $_SESSION['last_activity'];
 
-      // Vérifier si l'utilisateur est inactif depuis plus de la durée autorisée
+      // Vérifier si l'user est inactif depuis plus de la durée autorisée
       if ($elapsed_time > $inactive_duration) {
           // Détruit la session 
           session_destroy();
@@ -27,7 +28,7 @@
       }
     }
 
-    // Mettre à jour le temps de dernière activité
+    // Maj du temps de dernière activité
     $_SESSION['last_activity'] = time();
 ?>
 
@@ -131,62 +132,38 @@
     <div class="container">
       <h3 class="mt-5 mb-4">Articles et ressources :</h3>
       <div class="row">
-          <div class="col-md-6">
-              <div class="card mb-4">
-                  <div class="card-body">
-                      <h4 class="card-title">Nombre de personnes autistes en France</h4>
-                      <p class="card-text">Selon <a href="https://www.autisme.fr/" target="_blank">Autisme France</a>, environ 700 000 personnes sont touchées par l'autisme en France.</p>
-                      <div class="card_index">
-                        <a href="https://www.autisme.fr/" class="btn btn-primary" target="_blank">En savoir plus</a>
-                      </div>
-                  </div>
-              </div><!--card-->
-          </div><!--col-md-6-->
-          <div class="col-md-6">
-              <div class="card mb-4">
-                  <div class="card-body">
-                      <h4 class="card-title">Nombre de personnes autistes en Europe</h4>
-                      <p class="card-text">Selon l'<a href="https://www.autismeurope.org/fr/qui-sommes-nous/le-spectre-autistique/" target="_blank">Autisme Europe</a>, environ 5 millions de personnes sont atteintes d'autisme en Europe.</p>
-                      <div class="card_index">
-                        <a href="https://www.autismeurope.org/fr/qui-sommes-nous/le-spectre-autistique/" class="btn btn-primary" target="_blank">En savoir plus</a>
-                      </div>    
-                  </div>
-              </div>
-          </div><!--col-md-6-->
+        <?php
+        $count = 0;
+        foreach ($articles as $article):
+        ?>
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h4 class="card-title"><?= $article['titre']; ?></h4>
+                    <p class="card-text"><?= $article['contenu']; ?></p>
+                    <div class="card_index">
+                        <?php if (!empty($article['photo_url'])): ?>
+                            <img src="<?= $article['photo_url']; ?>" class="img_index">
+                        <?php endif; ?>
+                        <?php if (!empty($article['video_url'])): ?>
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="<?= $article['video_url']; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="card_index">
+                        <a href="<?= $article['url_savoir_plus']; ?>" class="btn btn-primary" target="_blank">En savoir plus</a>
+                    </div>
+                </div>
+            </div><!--card-->
+        </div><!--col-md-6-->
+        <?php
+        $count++; 
+        if ($count >= 5) break;
+        endforeach;
+        ?>
       </div><!--row-->
-      <div class="row">
-          <div class="col-md-6">
-              <div class="card mb-4">
-                  <div class="card-body">
-                      <h4 class="card-title">Livre écrit par Aicha Ghembaza (maman de Louise)</h4>
-                      <p class="card-text"><a href="https://www.amazon.fr/Trop-belle-pour-ce-monde/dp/B0CJ2ZTK6Z" target="_blank">Trop belle pour ce monde</a>, Trop belle pour ce monde est le livre photo du film documentaire. J’aurais aimé avoir la capacité, l’énergie et le courage de vous raconter le long cauchemar éveillé que nous avons traversé pour aider notre enfant...</p>
-                      <div class="card_index">
-                        <img src="images/louise.jpg" class="img_index">
-                      </div>
-                      <br>
-                      <div class="card_index">
-                          <a href="https://www.amazon.fr/Trop-belle-pour-ce-monde/dp/B0CJ2ZTK6Z" class="btn btn-primary" target="_blank">En savoir plus</a>
-                      </div>                  
-                  </div>
-              </div>
-          </div><!--col-md-6-->
-          <div class="col-md-6">
-              <div class="card mb-4">
-                  <div class="card-body">
-                      <h4 class="card-title">Journée mondiale de sensibilisation à l'autisme</h4>
-                      <p class="card-text"> Pourquoi le bleu pour la Journée de l'autisme ? Car cette couleur symbolise le rêve et la vie, parce qu'elle est douce et apaisante, et semble appréciée des personnes autistes qui connaissent souvent des troubles sensoriels.</p>
-                      <div class="card_index">
-                        <img src="images/journee_autisme.png" class="img_index" alt="Journée mondiale de sensibilisation à l'autisme" target="_blank">
-                      </div>
-                      <br>
-                      <div class="card_index">
-                          <a href="https://handicap.gouv.fr/journee-mondiale-de-sensibilisation-lautisme-le-2-avril" class="btn btn-primary" target="_blank">En savoir plus</a>
-                      </div>                  
-                  </div>
-              </div>
-          </div><!--col-md-6-->
-      </div><!--row-->
-          <br>
+      <br>
           <div class="card_index">
             <a href="views/articles_ressources.php" class="btn btn-primary">Voir plus d'articles et ressources</a>
           </div>
