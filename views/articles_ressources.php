@@ -71,7 +71,9 @@ include('../includes/head.php');
                     <div class="card-body">
                         <h4 class="card-title">Formations gratuites en ligne</h4>
                         <p class="card-text">Un dispositif innovant qui vise à faciliter l'inclusion scolaire des enfants autistes en favorisant la formation gratuite des accompagnants (qu'ils soient parents, enseignants, AVS/AESH, paramédicaux et toute autre partie prenante) aux méthodes éducatives, comportementales, et de développement tout en créant une communauté solidaire qui œuvre au partage et à la mise à disposition des ressources.</p>
-                        <br>
+                        <div class="card_index">
+                            <img src="../images/canal_autisme.png" class="card_index_canal_autisme" alt="canal_autisme" target="_blank">
+                        </div>
                         <div class="card_index">
                             <a href="http://www.canalautisme.com/acceacuteder-aux-formations.html" class="btn btn-primary" target="_blank">En savoir plus</a>
                         </div>                  
@@ -93,6 +95,38 @@ include('../includes/head.php');
                     </div>
                 </div>
             </div><!--col-md-6--> 
+        </div><!--row-->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h4 class="card-title">Méthode PECS : la communication par échange d'images pour les autistes</h4>
+                        <p class="card-text">PECS signifie "Picture Exchange Communication System" en anglais, soit système de communication par échange d'images. Il s'agit d'une méthode de communication alternative et améliorée (CAA) pour les jeunes enfants autistes, qui peut se substituer au langage oral ou le compléter.</p>
+                        <br>
+                        <div class="card_index">
+                            <img src="../images/pecs.jpg" class="img_index" alt="methode pecs" target="_blank">                        
+                        </div>
+                        <div class="card_index">
+                            <a href="https://www.autismeinfoservice.fr/adapter/formations/methode-pecs" class="btn btn-primary" target="_blank">En savoir plus</a>
+                        </div>                  
+                    </div>
+                </div>
+            </div><!--col-md-6-->
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h4 class="card-title">Méthode Denver</h4>
+                        <p class="card-text">La méthode Denver est une méthode éducative, comportementale, développementale et relationnelle qui, en plus des principes comportementaux et éducatifs de la méthode ABA, utilise les connaissances du développement émotionnel et cognitif de l'enfant.</p>
+                        <br>
+                        <div class="card_index">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/-0xS7PoIhrU?si=LfOpUHfYOD_NHyJ-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="card_index">
+                            <a href="https://www.autismeinfoservice.fr/accompagner/travailler-enfants-autistes/denver" class="btn btn-primary" target="_blank">En savoir plus</a>
+                        </div>                  
+                    </div>
+                </div>
+            </div><!--col-md-6-->
         </div><!--row-->
     </div><!--container-->
     <br><br>

@@ -134,6 +134,10 @@ table tr{
     width: 250px; 
     height: 300px;
 }
+.card_index_canal_autisme{
+    width: 350px; 
+    height: 150px;
+}
 .card_index{
     text-align: center;
 }

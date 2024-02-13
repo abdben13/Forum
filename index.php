@@ -153,6 +153,8 @@
                   </div>
               </div>
           </div><!--col-md-6-->
+      </div><!--row-->
+      <div class="row">
           <div class="col-md-6">
               <div class="card mb-4">
                   <div class="card-body">
@@ -183,11 +185,11 @@
                   </div>
               </div>
           </div><!--col-md-6-->
+      </div><!--row-->
           <br>
           <div class="card_index">
             <a href="views/articles_ressources.php" class="btn btn-primary">Voir plus d'articles et ressources</a>
           </div>
-      </div><!--row-->
     <!-- Liens vers des organisations de soutien -->
         <h3 class="mt-5 mb-4">Organisations de soutien :</h3>
         <ul>
