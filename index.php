@@ -145,11 +145,13 @@
                         <?php if (!empty($article['photo_url'])): ?>
                             <img src="<?= $article['photo_url']; ?>" class="img_index">
                         <?php endif; ?>
+                        <br>
                         <?php if (!empty($article['video_url'])): ?>
                             <div class="embed-responsive embed-responsive-16by9">
                                 <iframe class="embed-responsive-item" src="<?= $article['video_url']; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             </div>
                         <?php endif; ?>
+                        <br>
                     </div>
                     <div class="card_index">
                         <a href="<?= $article['url_savoir_plus']; ?>" class="btn btn-primary" target="_blank">En savoir plus</a>
