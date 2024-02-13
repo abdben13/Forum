@@ -32,6 +32,8 @@ include('../includes/head.php');
                     </div>
                 </div>
             </div><!--col-md-6-->
+        </div><!--row-->
+        <div class="row">
             <div class="col-md-6">
                 <div class="card mb-4">
                     <div class="card-body">
@@ -62,7 +64,8 @@ include('../includes/head.php');
                     </div>
                 </div>
             </div><!--col-md-6--> 
-            </div><!--col-md-6-->
+        </div><!--row-->
+        <div class="row">
             <div class="col-md-6">
                 <div class="card mb-4">
                     <div class="card-body">
