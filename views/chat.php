@@ -17,17 +17,25 @@
         $message = $_POST['message'];
 
         // Vérifions si le champ n'est pas vide
-        if(isset($message) && $message != "") {
-            // Insérer le message dans la base de données
-            $req = $bdd->prepare("INSERT INTO messages VALUES (NULL,'$pseudo','$message',NOW())");
-            $req->execute();
-    
-            // Actualisation de la page 
-            header('Location:chat.php');
-        } else {
-            // Si le message est vide, on actualise la page 
-            header('Location:chat.php');
-        }
+        if(isset($_POST['send'])) {
+            // Récupérons le message 
+            $message = $_POST['message'];
+        
+            // Vérifions si le champ n'est pas vide
+            if(isset($message) && $message != "") {
+                // Insérer le message dans la base de données en utilisant une requête préparée
+                $req = $bdd->prepare("INSERT INTO messages (pseudo, msg, date) VALUES (:pseudo, :message, NOW())");
+                $req->bindParam(':pseudo', $pseudo);
+                $req->bindParam(':message', $message);
+                $req->execute();
+
+                // Actualisation de la page 
+                header('Location:chat.php');
+            } else {
+                // Si le message est vide, on actualise la page 
+                header('Location:chat.php');
+            }
+        }        
     }
 
     if(isset($_SESSION['login_success_msg'])) {
