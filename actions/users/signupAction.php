@@ -28,6 +28,15 @@ if(isset($_POST['validate'])){
             $req = $bdd->prepare("UPDATE users SET en_ligne = 1 WHERE pseudo = '$user_pseudo'");
             $req->execute();
 
+             // Envoi de l'e-mail de confirmation
+             $to = $user_email;
+             $subject = "Confirmation de création de compte";
+             $message = "Bonjour $user_firstname $user_lastname,\n\nVotre compte a bien été créé sur notre site. Vous pouvez désormais vous connecter avec votre pseudo $user_pseudo.\n\nCordialement,\nL'équipe de dansmabulle.info";
+             $headers = "From: contact@dansmabulle.info";
+ 
+             // Envoi de l'e-mail
+             mail($to, $subject, $message, $headers);
+
             //Récupération des données de l'utilisateur
             $getInfosOfThisUserReq = $bdd->prepare('SELECT id, pseudo, nom, prenom FROM users WHERE nom =? AND prenom= ? AND pseudo = ?');
             $getInfosOfThisUserReq->execute(array($user_lastname, $user_firstname, $user_pseudo));
