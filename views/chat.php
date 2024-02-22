@@ -66,8 +66,8 @@
                                 <?php foreach ($users as $user): ?>
                                     <?php
                                         
-                                        $iconeEnLigne = ($user['en_ligne'] == 1) ? '<img class="icone-ligne" src="../public/images/pngegg.png" alt="En ligne">' : '';
-                                        $iconeHorsLigne = ($user['en_ligne'] == 0) ? '<img class="icone-ligne" src="../public/images/pngrouge.png" alt="Hors ligne">' : '';
+                                        $iconeEnLigne = ($user['en_ligne'] == 1) ? '<img class="icone-ligne" src="../images/pngegg.png" alt="En ligne">' : '';
+                                        $iconeHorsLigne = ($user['en_ligne'] == 0) ? '<img class="icone-ligne" src="../images/pngrouge.png" alt="Hors ligne">' : '';
                                     ?>
                                     <tr>
                                     <td class="icone-ligne">

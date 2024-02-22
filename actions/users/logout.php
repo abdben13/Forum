@@ -2,7 +2,7 @@
 session_start();
 require('../database.php');
 
-$redirect_url = "../../views/default.php";
+$redirect_url = "../../index.php";
 
 if (isset($_SESSION['id'])) {
     $user_id = $_SESSION['id'];
@@ -30,7 +30,7 @@ if (isset($_SESSION['id'])) {
     } else {
         // Vers la page d'accueil par défaut
         $msgSuccessLogout = "Vous êtes maintenant déconnecté de votre compte";
-        header("Location: ../../views/default.php");
+        header("Location: ../../index.php");
         exit();
     }
 } else {

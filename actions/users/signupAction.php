@@ -52,7 +52,7 @@ if(isset($_POST['validate'])){
 
             $_SESSION['signup_success_msg'] = "Votre compte a bien été créé. Vous êtes maintenant connecté à votre compte";
             //Redirection vers la page d'accueil
-            header('Location: ../../views/default.php');
+            header('Location: ../index.php');
         }else{
             $errorMsg = "L'utilisateur existe déjà";
         }

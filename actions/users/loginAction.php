@@ -46,7 +46,7 @@ require('../actions/database.php');
                         header("Location: $redirect_url");
                     } else {
                         //Vers la page d'accueil par défaut
-                        header("Location: ../../views/default.php");
+                        header("Location: ../index.php");
                     }
                 }else{
                     $errorMsg = 'Mot de passe incorrect';
