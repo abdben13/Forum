@@ -35,7 +35,7 @@
                             <p class="card-text"><?= $article['contenu']; ?></p>
                             <div class="card_index">
                                 <?php if (!empty($article['photo_url'])): ?>
-                                    <img src="../<?= $article['photo_url']; ?>" class="img_index">
+                                    <img src="<?= $article['photo_url']; ?>" class="img_index">
                                 <?php endif; ?>
                                 <?php if (!empty($article['video_url'])): ?>
                                     <div class="embed-responsive embed-responsive-16by9">
